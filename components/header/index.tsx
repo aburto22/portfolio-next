@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Svg from '../svg';
 import ScrollLink from './scroll_link';
 import DarkToggle from '../dark_toggle';
+import ThemeContext from '../../context/theme_context';
+import styles from './styles.module.scss';
 
 const Header = () => {
   const [isNavShowing, setIsNavShowing] = useState(false);
+  const [darkTheme] = useContext(ThemeContext);
 
   const handleToggle = () => setIsNavShowing((val) => !val);
 
@@ -16,32 +19,30 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed w-full top-0 z-30 bg-white dark:bg-gray-dark-bg">
-      <nav className="h-20 w-full border-b border-gray-200 dark:border-gray-primary">
-        <ul className="max-w-screen-lg mx-auto flex flex-row items-center h-full px-2">
-          <li className="block">
+    <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
+      <nav className={`${styles.nav} ${darkTheme && styles.navDark}`}>
+        <ul className={styles.navList}>
+          <li className={styles.logoItem}>
             <button
               type="button"
               onClick={handleHome}
-              className="p-2 mx-1 font-hand text-2xl font-bold"
+              className={styles.logoButton}
             >
               Alejandro Aburto S.
             </button>
           </li>
-          <li className="ml-auto font-title font-medium text-lg">
+          <li className={styles.navLinksItem}>
             <ul
-              className={`transform origin-top-right ${
-                isNavShowing ? "scale-100" : "scale-0"
-              } transition-transform h-screen w-screen bg-white dark:bg-gray-dark-bg flex flex-col z-40 absolute top-0 right-0 border-l border-gray-light dark:border-gray-dark-bg-light align-center justify-center sm:transform-none sm:flex-row sm:w-auto sm:h-auto sm:border-0 sm:static sm:bg-transparent`}
+              className={`${styles.navLinksContainer} ${isNavShowing && styles.navLinksContainerShowing} ${darkTheme && styles.navLinksContainerDark}`}
             >
-              <li className="absolute top-4 right-3 sm:hidden">
+              <li className={styles.closeButtonItem}>
                 <button
                   type="button"
-                  className="px-4 py-2"
+                  className={styles.closeButton}
                   onClick={handleToggle}
                   aria-label="close menu"
                 >
-                  <Svg name="close" className="h-7 w-7" />
+                  <Svg name="close" className={styles.closeButtonSvg} />
                 </button>
               </li>
               <ScrollLink
@@ -59,19 +60,19 @@ const Header = () => {
                 target="contact"
                 setIsNavShowing={setIsNavShowing}
               />
-              <li className="flex items-center justify-center">
+              <li className={styles.darkToggleItem}>
                 <DarkToggle />
               </li>
             </ul>
           </li>
-          <li className="block sm:hidden">
+          <li className={styles.openButtonItem}>
             <button
               type="button"
               onClick={handleToggle}
-              className="px-4 py-2 rounded"
+              className={styles.openButton}
               aria-label="open menu"
             >
-              <Svg name="menu" className="h-8 w-8" />
+              <Svg name="menu" className={styles.openButtonSvg} />
             </button>
           </li>
         </ul>

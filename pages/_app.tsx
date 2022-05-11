@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import '../styles/globals.css'
+import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import useTheme from '../hooks/use_theme';
 import ScrollContext from '../context/scroll_context';

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .toggler {
   padding: 0.5rem 1rem;
 }
@@ -10,12 +12,12 @@
   justify-content: flex-start;
   align-items: center;
   border-radius: 1rem;
-  border: 1px solid rgb(229, 231, 235);
+  border: 1px solid $gray-200;
 }
 
 .containerDark {
   justify-content: flex-end;
-  border: 1 solid var(--gray-primary);
+  border: 1 solid $gray-primary;
 }
 
 .svg {

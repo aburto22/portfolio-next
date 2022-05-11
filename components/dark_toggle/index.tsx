@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Svg from '../svg';
 import ThemeContext from '../../context/theme_context';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const DarkToggle = () => {
   const [darkTheme, setDarkTheme] = useContext(ThemeContext);

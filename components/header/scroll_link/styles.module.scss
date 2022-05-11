@@ -1,0 +1,40 @@
+@import '../../../styles/variables.scss';
+
+.linkItem {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: 0;
+  transition: all;
+}
+
+.linkItem:hover, .underline:hover {
+  width: 100%;
+}
+
+.link {
+  padding: 0.5rem;
+  transition: all;
+}
+
+.link:hover {
+  color: $blue-hover;
+}
+
+.linkDark:hover {
+  color: $blue-hover;
+}
+
+@media screen and (min-width: var(--screen-sm)) {
+  .linkItem {
+    margin: 0 0.25rem;
+  }
+}

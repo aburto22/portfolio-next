@@ -17,6 +17,7 @@ a {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 a {
@@ -35,36 +36,3 @@ a {
         hand: ["Satisfy", "sans-serif"],
         title: ["Quicksand", "sans-serif"],
       }, */
-
-:root {
-  --screen-sm: 40em;
-  --screen-md: 48em;
-  --screen-lg: 64em;
-  --screen-xl: 80em;
-  --screen-2xl: 96em;
-
-  --gray-light: #fbfbfb;
-  --gray-med: #b4b4b4;
-  --gray-primary: #3a3a3a;
-  --gray-dark-bg: #1a1a1a;
-  --gray-dark-bg-light: #232323;
-
-  --blue-hover: #4aa6f3;
-  --blue-link: #006baa;
-  --blue-link-dark: #5fb9ee;
-  --blue-grad-i: #006baa;
-  --blue-grad-f: #59a7de;
-
-  --bs-image: inset 0 0 2rem 2rem rgba(256, 256, 256, 1);
-  --bs-image-dark: inset 0 0 2rem 2rem rgba(26, 26, 26, 1);
-  --bs-dark: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
-  --bs-md-dark: 0 4px 6px -1px rgba(256, 256, 256, 0.1), 0 2px 4px -1px rgba(256, 256, 256, 0.06);
-  --bs-lg-dark: 0 10px 15px -3px rgba(256, 256, 256, 0.1), 0 4px 6px -2px rgba(256, 256, 256, 0.06);
-  --bs-xl-dark: 0 20px 25px -5px rgba(256, 256, 256, 0.1), 0 10px 10px -5px rgba(256, 256, 256, 0.06);
-  
-  --size-side-nav-w: 15rem;
-  --size-main-project-h: 30rem;
-  --size-main-project-w: 22rem;
-  --size-full-nav: calc(100vh - 5rem);
-  --size-full-nav-footer: calc(100vh - 5rem - 4rem);
-}

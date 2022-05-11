@@ -1,30 +1,43 @@
-import { useState, useEffect, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useContext } from 'react';
 import ScrollContext from '../../../context/scroll_context';
+import ThemeContext from '../../../context/theme_context';
+import styles from './styles.module.scss';
 
-export default function ScrollLink({ name, target, setIsNavShowing }) {
-  const [anchor, setAnchor] = useState(null);
+interface ScrollLinkProps {
+  name: string;
+  target: string;
+  setIsNavShowing: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
+  const [anchor, setAnchor] = useState<Element | null>(null);
   const { activateScrollingDelay } = useContext(ScrollContext);
+  const [darkTheme] = useContext(ThemeContext);
 
   useEffect(() => {
     setAnchor(document.querySelector(`#${target}`));
-  }, []);
+  }, [target]);
 
-  function handleClick(event) {
+  const handleClick = (event: React.SyntheticEvent) => {
+    if (!anchor) {
+      return;
+    }
+
     event.preventDefault();
     activateScrollingDelay();
     anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+
     if (setIsNavShowing) {
       setIsNavShowing(false);
     }
   }
 
   return (
-    <li className="flex justify-center relative nav-link w-max mx-auto sm:mx-1">
-      <div className="absolute bottom-0 h-0 w-0 border-b border-blue-hover nav-link-underline transition-all" />
+    <li className={styles.linkItem}>
+      <div className={styles.underline} />
       <a
         href={`#${anchor}`}
-        className="p-2 border-b border-transparent hover:text-blue-hover dark:hover:text-blue-hover transition-all"
+        className={`${styles.link} ${darkTheme && styles.linkDark}`}
         onClick={handleClick}
       >
         {name}
@@ -33,12 +46,8 @@ export default function ScrollLink({ name, target, setIsNavShowing }) {
   );
 }
 
-ScrollLink.propTypes = {
-  name: PropTypes.string.isRequired,
-  target: PropTypes.string.isRequired,
-  setIsNavShowing: PropTypes.func,
-};
-
 ScrollLink.defaultProps = {
   setIsNavShowing: undefined,
 };
+
+export default ScrollLink;
