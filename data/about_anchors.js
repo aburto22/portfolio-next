@@ -1,0 +1,28 @@
+const ANCHORS = [
+  {
+    name: "Studies",
+    target: "#studies",
+  },
+  {
+    name: "Work experience",
+    target: "#work",
+  },
+  {
+    name: "Some time off",
+    target: "#time-off",
+  },
+  {
+    name: "My coding journey",
+    target: "#coding",
+  },
+  {
+    name: "What about now?",
+    target: "#now",
+  },
+  {
+    name: "Apart from coding",
+    target: "#apart",
+  },
+];
+
+export default ANCHORS;
