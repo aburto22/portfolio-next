@@ -1,0 +1,10 @@
+/* font-body */
+.container {
+  width: 100%;
+  color: var(--gray-primary);
+}
+
+.container--dark {
+  color: white;
+  background-color: var(--gray-dark-bg);
+}
