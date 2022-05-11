@@ -13,7 +13,7 @@
   bottom: 0;
   height: 0;
   width: 0;
-  transition: all 500ms;
+  transition: all 200ms;
   border-bottom: 1px solid $blue-hover;
 }
 
@@ -23,7 +23,7 @@
 
 .link {
   padding: 0.5rem;
-  transition: all;
+  transition: all 200ms;
 }
 
 .linkItem:hover {
