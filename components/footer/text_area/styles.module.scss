@@ -1,0 +1,73 @@
+@import '../../../styles/variables.scss';
+
+.label {
+  margin-bottom: 1.5rem;
+}
+
+.labelValid {
+  color: $green-500;
+}
+
+.labelInvalid {
+  color: $red-500;
+}
+
+.labelInvalidContent:focus-within {
+  color: $red-500;
+}
+
+.labelText {
+  height: 1rem;
+  margin-bottom: 0.25rem;
+  transition: all 500ms;
+  user-select: none;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.labelTextContent {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  position: relative;
+  top: 1.5rem;
+  left: 0.5rem;
+  cursor: text;
+}
+
+.label:focus-within > .labelTextContent {
+  top: 0;
+  left: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+.textArea {
+  padding: 0.25rem;
+  border-radius: 0.125rem;
+  border: 1px solid $gray-med;
+  outline: none;
+  resize: none;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: transparent;
+  color: $gray-primary;
+}
+
+.textAreaDark {
+  color: white;
+}
+
+.textAreaValid {
+  border: 1px solid $green-500;
+}
+
+.textAreaInvalid {
+  border: 1px solid $red-500;
+}
+
+.textAreaInvalidContent:focus-within {
+  border: 1px solid $red-500;
+}

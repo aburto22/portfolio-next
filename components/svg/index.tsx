@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import styles from './styles.module.scss';
 
 interface SvgProps {
   name: string;
@@ -208,7 +209,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
 }
 
 Svg.defaultProps = {
-  className: "h-6 w-6",
+  className: styles.svg,
   stroke: 1,
 };
 
