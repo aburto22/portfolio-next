@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const DarkToggle = () => {
   const [darkTheme, setDarkTheme] = useContext(ThemeContext);
 
-  function handleDark() {
+  const handleDark = () => {
     if (darkTheme) {
       localStorage.theme = 'light';
       return setDarkTheme(false);
