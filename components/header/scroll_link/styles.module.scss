@@ -13,10 +13,11 @@
   bottom: 0;
   height: 0;
   width: 0;
-  transition: all;
+  transition: all 500ms;
+  border-bottom: 1px solid $blue-hover;
 }
 
-.linkItem:hover, .underline:hover {
+.linkItem:hover .underline {
   width: 100%;
 }
 
@@ -25,11 +26,11 @@
   transition: all;
 }
 
-.link:hover {
+.linkItem:hover {
   color: $blue-hover;
 }
 
-.linkDark:hover {
+.linkDarkItem:hover {
   color: $blue-hover;
 }
 
