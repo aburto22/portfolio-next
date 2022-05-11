@@ -20,6 +20,9 @@ $blue-grad-f: #59a7de;
 $green-500: rgb(16, 185, 129);
 $red-500: rgb(239, 68, 68);
 
+$gradient-blue: linear-gradient(to bottom right, #006baa, #59a7de);
+$gradient-blue-hover: linear-gradient(to top left, #006baa, #59a7de);
+
 $bs-image: inset 0 0 2rem 2rem rgba(256, 256, 256, 1);
 $bs-image-dark: inset 0 0 2rem 2rem rgba(26, 26, 26, 1);
 $bs-dark: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
@@ -31,5 +34,6 @@ $height-header: 5rem;
 $height-footer: 4rem;
 $height-main-project: 30rem;
 $width-main-project: 22rem;
+$width-side-nav: 15rem;
 $height-full-nav: calc(100vh - $height-header);
 $height-full-nav-footer: calc(100vh - $height-header - $height-footer);

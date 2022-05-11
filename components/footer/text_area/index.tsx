@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from '../../../context/theme_context';
 import styles from './styles.module.scss';
 
 interface TextAreaProps {
@@ -10,6 +11,8 @@ interface TextAreaProps {
 }
 
 const TextArea = ({ field, setField, name, text, fieldValid }: TextAreaProps) => {
+  const [darkTheme] = useContext(ThemeContext);
+
   const handleClick = (event: React.MouseEvent) => {
     const nextElementSibling = event.currentTarget.nextElementSibling as HTMLElement;
     nextElementSibling.focus()
@@ -38,7 +41,7 @@ const TextArea = ({ field, setField, name, text, fieldValid }: TextAreaProps) =>
         onChange={(event) => setField(event.target.value)}
         required
         rows={5}
-        className={`${styles.textArea} ${fieldValid ? styles.textAreaValid : fieldTextAreaInvalid}`}
+        className={`${styles.textArea} ${fieldValid ? styles.textAreaValid : fieldTextAreaInvalid} ${darkTheme && styles.textAreaDark}`}
       />
     </label>
   );

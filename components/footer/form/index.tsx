@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import ThemeContext from '../../../context/theme_context';
 import emailjs, { init } from 'emailjs-com';
 import Input from '../input';
 import TextArea from '../text_area';
@@ -13,6 +14,8 @@ const Form = () => {
     message: '',
     code: '',
   });
+
+  const [darkTheme] = useContext(ThemeContext);
 
   init(process.env.REACT_APP_EMAILJS_USER_ID || '');
 
@@ -47,7 +50,7 @@ const Form = () => {
   }
 
   const noticeStyle =
-    notice.code === 'error' ? 'text-red-500 h-6' : 'text-green-500 h-4';
+    notice.code === 'error' ? styles.messageError : styles.messageCorrect;
 
   const messageValid = message.length > 10;
   const emailValid =
@@ -59,21 +62,19 @@ const Form = () => {
     : emailValid && messageValid && nameValid;
 
   return (
-    <div className='bg-white px-1 py-8 rounded relative -top-32 border shadow focus-me w-full max-w-2xl dark:shadow-dark dark:bg-gray-dark-bg'>
-      <span id='contact' className='w-0 h-0 absolute -top-36' />
-      <h2 className='text-center pt-4 font-bold mb-2 text-2xl'>
+    <div className={`focus-me ${styles.formContainer} ${darkTheme && styles.formContainerDark}`}>
+      <span id='contact' className={styles.anchor} />
+      <h2 className={styles.formTitle}>
         Do you want to say hi?
       </h2>
       <p
-        className={`text-xs font-bold h-2 ${
-          notice.code.length > 0 && noticeStyle
-        } text-center break-normal w-56 mx-auto`}
+        className={`${message} ${notice.code.length > 0 && noticeStyle}`}
       >
         {notice.message}
       </p>
       <form
         onSubmit={handleSubmit}
-        className='px-4 mt-3 mb-2 flex flex-col w-full max-w-xs mx-auto'
+        className={styles.form}
       >
         <Input
           name='name'
@@ -98,11 +99,7 @@ const Form = () => {
         />
         <button
           type='submit'
-          className={`py-2 px-8 rounded-lg text-center text-white bg-gradient-to-br from-blue-grad-i to-blue-grad-f  
-            mb-3 shadow-md dark:shadow-md-dark ${
-              !isBtnActive &&
-              'opacity-50 hover:bg-gradient-to-br cursor-default'
-            } ${isBtnActive && 'hover:bg-gradient-to-tl'} w-max mx-auto`}
+          className={`${styles.submitButton} ${darkTheme && styles.submitButtonDark} ${!isBtnActive && styles.submitButtonInactive}`}
           disabled={!isBtnActive}
         >
           Send

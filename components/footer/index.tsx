@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import Svg from "../svg/";
 import Form from "./form";
+import ThemeContext from "../../context/theme_context";
 import styles from './styles.module.scss';
 
 interface FooterProps {
@@ -7,49 +9,49 @@ interface FooterProps {
 }
 
 const Footer = ({ sidebar }: FooterProps) => {
+  const [darkTheme] = useContext(ThemeContext);
+
   return (
     <footer
-      className={`border-t border-gray-200 bg-gray-light dark:bg-gray-dark-bg-light dark:border-gray-primary ${
-        sidebar && "md:ml-side-nav-w"
-      }`}
+      className={`${styles.footer} ${darkTheme && styles.footerDark} ${sidebar && styles.footerSidebar}`}
     >
-      <div className="flex flex-col items-center justify-around max-w-screen-lg mx-auto px-4">
+      <div className={styles.footerContainer}>
         <Form />
-        <div className="flex items-center justify-center flex-col mx-4 mb-12 relative -top-12">
-          <div className="flex items-center justify-center mb-4">
+        <div className={styles.footerLegend}>
+          <div className={styles.footerIconsContainer}>
             <a
               href="mailto:aburto22@gmail.com"
               aria-label="Send me an email"
-              className="mx-1 hover:text-blue-hover dark:hover:text-blue-hover"
+              className={styles.footerIcon}
             >
-              <Svg name="mail" className="w-8 h-8" />
+              <Svg name="mail" className={styles.svgLarge} />
             </a>
             <a
               href="https://github.com/aburto22"
               aria-label="My git-hub page"
               target="_blank"
               rel="noreferrer"
-              className="mx-1 hover:text-blue-hover dark:hover:text-blue-hover"
+              className={styles.footerIcon}
             >
-              <Svg name="github" className="w-6 h-6" />
+              <Svg name="github" className={styles.svgSmall} />
             </a>
             <a
               href="https://linkedin.com/in/alejandroaburtos/"
               aria-label="My linkedin page"
               target="_blank"
               rel="noreferrer"
-              className="mx-1 hover:text-blue-hover dark:hover:text-blue-hover"
+              className={styles.footerIcon}
             >
-              <Svg name="linkedin" className="w-8 h-8" />
+              <Svg name="linkedin" className={styles.svgLarge} />
             </a>
             <a
               href="https://www.freecodecamp.org/aburto22"
               aria-label="My freeCodeCamp page"
               target="_blank"
               rel="noreferrer"
-              className="mx-1 hover:text-blue-hover dark:hover:text-blue-hover"
+              className={styles.footerIcon}
             >
-              <Svg name="freeCodeCamp" className="w-8 h-8" />
+              <Svg name="freeCodeCamp" className={styles.svgLarge} />
             </a>
           </div>
           <p className="text-xs">Created by Alejandro Aburto S.</p>
