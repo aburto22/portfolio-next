@@ -1,3 +1,4 @@
+$screen-xs: 32em;
 $screen-sm: 40em;
 $screen-md: 48em;
 $screen-lg: 64em;
@@ -36,8 +37,8 @@ $bs-xl-dark: 0 20px 25px -5px rgba(256, 256, 256, 0.1), 0 10px 10px -5px rgba(25
 
 $height-header: 5rem;
 $height-footer: 4rem;
-$height-main-project: 30rem;
-$width-main-project: 22rem;
+$height-main-project: 28rem;
+$width-main-project: 21rem;
 $width-side-nav: 15rem;
 $height-full-nav: calc(100vh - $height-header);
 $height-full-nav-footer: calc(100vh - $height-header - $height-footer);

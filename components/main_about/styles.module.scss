@@ -23,7 +23,7 @@
 
 .container {
   height: 100%;
-  max-width: $screen-md;
+  max-width: $screen-xs;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -35,10 +35,6 @@
   font-size: 1.875rem;
   line-height: 2.25rem;
   margin-bottom: 2rem;
-}
-
-.content {
-  max-width: 32rem;
 }
 
 .contentText {
