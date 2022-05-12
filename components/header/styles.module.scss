@@ -5,7 +5,7 @@
   width: 100%;
   top: 0;
   z-index: 3;
-  background-color: white;
+  background-color: $light-white;
 }
 
 .headerDark {
@@ -48,7 +48,6 @@
 .navLinksItem {
   margin-left: auto;
   font-family: $font-title;
-  font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
@@ -59,7 +58,7 @@
   transition: transform 150ms;
   height: 100vh;
   width: 100vw;
-  background-color: white;
+  background-color: $light-white;
   display: flex;
   flex-direction: column;
   justify-content: center;
