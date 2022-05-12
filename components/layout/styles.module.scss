@@ -1,10 +1,12 @@
+@import '../../styles/variables.scss';
+
 .container {
   width: 100%;
-  color: var(--gray-primary);
-  font-family: 'open-sans', sans-serif;
+  color: $gray-primary;
+  font-family: $font-body
 }
 
 .containerDark {
   color: white;
-  background-color: var(--gray-dark-bg);
+  background-color: $gray-dark-bg
 }
