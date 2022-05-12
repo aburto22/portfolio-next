@@ -4,7 +4,7 @@ import ThemeContext from '../../context/theme_context';
 import TechIcon from '../tech_icon';
 import ICONS from '../../data/icons.json';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
-import * as ROUTES from '../../data/routes';
+import ROUTES from '../../data/routes.json';
 import styles from './styles.module.scss';
 import { IIcon } from '../../types';
 
@@ -85,7 +85,7 @@ const MainAbout = () => {
         >
           {IconsGeneralComponents}
         </ul>
-        <Link href={ROUTES.ABOUT_ME}>
+        <Link href={ROUTES.aboutMe}>
           <a
             className={`${styles.link} ${darkTheme && styles.linkDark}`}
           >

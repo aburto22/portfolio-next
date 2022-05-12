@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ThemeContext from '../../context/theme_context';
 import Link from 'next/link'
 import Svg from '../svg';
-import * as ROUTES from '../../data/routes';
+import ROUTES from '../../data/routes.json';
 import styles from './styles.module.scss';
 
 const BackHomeArrow = () => {
@@ -10,7 +10,7 @@ const BackHomeArrow = () => {
 
   return (
     <div className={styles.container}>
-      <Link href={ROUTES.HOME}>
+      <Link href={ROUTES.home}>
         <a className={`${styles.link} ${darkTheme && styles.linkDark}`}>
           <Svg name="arrowLeft" className={styles.svg} />
           Go back to main page
