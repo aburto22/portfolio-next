@@ -34,7 +34,7 @@
   color: $blue-hover;
 }
 
-@media screen and (min-width: var(--screen-sm)) {
+@media screen and (min-width: $screen-sm) {
   .linkItem {
     margin: 0 0.25rem;
   }
