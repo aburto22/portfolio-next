@@ -15,3 +15,8 @@ export interface IIcon {
   category: string;
   filter: boolean;
 }
+
+export interface IAnchor {
+  name: string;
+  target: string;
+}

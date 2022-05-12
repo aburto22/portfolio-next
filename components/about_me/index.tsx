@@ -9,6 +9,7 @@ import aboutImage from '../../public/images/about-me/about-me.jpg';
 
 export default function About() {
   const [darkTheme] = useContext(ThemeContext);
+  
   return (
     <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
       <BackHomeArrow />
