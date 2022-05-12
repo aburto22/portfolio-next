@@ -54,7 +54,7 @@ const Footer = ({ sidebar }: FooterProps) => {
               <Svg name="freeCodeCamp" className={styles.svgLarge} />
             </a>
           </div>
-          <p className="text-xs">Created by Alejandro Aburto S.</p>
+          <p className={styles.footerText}>Created by Alejandro Aburto S.</p>
         </div>
       </div>
     </footer>
