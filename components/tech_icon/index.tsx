@@ -7,11 +7,10 @@ import styles from './styles.module.scss';
 
 interface TechIconProps {
   icon: IIcon;
-  className: string;
   tooltip: boolean;
 }
 
-const TechIcon = ({ icon, className, tooltip }: TechIconProps) => {
+const TechIcon = ({ icon, tooltip }: TechIconProps) => {
   const [darkTheme] = useContext(ThemeContext);
   return (
     <div className={`${styles.techIcon} ${darkTheme && styles.techIconDark}`}>
@@ -20,11 +19,13 @@ const TechIcon = ({ icon, className, tooltip }: TechIconProps) => {
           {icon.name}
         </div>
       )}
-      <Image
-        src={`/icons/${icon.icon}.png`}
-        alt={icon.alt}
-        className={className}
-      />
+      <div className={styles.iconContainer}>
+        <Image
+          src={`/icons/${icon.icon}.png`}
+          alt={icon.alt}
+          layout="fill"
+        />
+      </div>
     </div>
   );
 }
@@ -32,6 +33,5 @@ const TechIcon = ({ icon, className, tooltip }: TechIconProps) => {
 export default TechIcon;
 
 TechIcon.defaultProps = {
-  className: styles.techIconDefaultSize,
   tooltip: false,
 };

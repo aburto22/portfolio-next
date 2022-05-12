@@ -21,8 +21,8 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
   const IconComponents = ICONS.filter((icon) =>
     technologies.includes(icon.icon)
   ).map((icon) => (
-    <li key={icon.name}>
-      <TechIcon icon={icon} className="h-7 w-7" tooltip />
+    <li key={icon.name} className={styles.iconItem}>
+      <TechIcon icon={icon} tooltip />
     </li>
   ));
 
@@ -36,6 +36,7 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
         src={`/images/projects/${img}`}
         alt={description}
         className={styles.image}
+        layout="fill"
       />
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a

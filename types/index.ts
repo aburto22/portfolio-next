@@ -2,7 +2,7 @@ export interface IProject {
   name: string;
   img: string;
   description: string;
-  page: string;
+  page?: string;
   technologies: string[];
   link: string;
   github: string;

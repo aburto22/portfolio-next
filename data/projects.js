@@ -1,7 +1,7 @@
 const PROJECTS = [
   {
     name: "Travel Buddy",
-    img: "travel-buddy.webp",
+    img: "travel-buddy.png",
     description: "Share trips and experiences, and find your next travel buddy",
     technologies: [
       "react",
@@ -19,7 +19,7 @@ const PROJECTS = [
   },
   {
     name: "Read My List",
-    img: "read-my-list.webp",
+    img: "read-my-list.png",
     description:
       "Manage your reading list efficiently by adding tags, sorting and filtering.",
     page: "/read-my-list",
@@ -30,7 +30,7 @@ const PROJECTS = [
   },
   {
     name: "LOTR Quotes",
-    img: "lotr-quotes.webp",
+    img: "lotr-quotes.png",
     description: "Search for characters and quotes from the Lord of the Rings",
     technologies: ["react", "redux", "docker", "node", "typescript", "heroku"],
     link: "https://quotes-lotr.herokuapp.com/",
@@ -39,7 +39,7 @@ const PROJECTS = [
   },
   {
     name: "Hat Me Now",
-    img: "hat-me-now.webp",
+    img: "hat-me-now.png",
     description:
       "Fictitious E-Commerce website to sell hats. Users can create an account and pass orders.",
     page: "/hat-me-now",
@@ -50,7 +50,7 @@ const PROJECTS = [
   },
   {
     name: "Microservices",
-    img: "microservices.webp",
+    img: "microservices.png",
     description:
       "Simple website that displays a timestamp and headers of your request.",
     technologies: ["react", "tailwind", "node", "heroku"],
@@ -60,7 +60,7 @@ const PROJECTS = [
   },
   {
     name: "Kickstarter Pledges",
-    img: "kickstarter-pledges.webp",
+    img: "kickstarter-pledges.png",
     description: "Treemap diagram showing several Kickstarter pledges.",
     technologies: ["sass", "d3", "responsive"],
     link: "https://aburto22.github.io/kickstarter-pledges/",
@@ -69,7 +69,7 @@ const PROJECTS = [
   },
   {
     name: "USA Bachelor Degree",
-    img: "usa-bachelor-degree.webp",
+    img: "usa-bachelor-degree.png",
     description:
       "Choropleth map showing percentage of people with bachelor degree per county in the USA.",
     technologies: ["sass", "d3", "responsive"],
@@ -79,7 +79,7 @@ const PROJECTS = [
   },
   {
     name: "Global Temperature",
-    img: "global-temperature.webp",
+    img: "global-temperature.png",
     description: "Heat map showing earth global temperature.",
     technologies: ["sass", "d3", "responsive"],
     link: "https://aburto22.github.io/global-temperature/",
@@ -88,7 +88,7 @@ const PROJECTS = [
   },
   {
     name: "Bicycle Doping",
-    img: "bicycle-doping.webp",
+    img: "bicycle-doping.png",
     description: "Scatter plot showing doping in professional cycling races.",
     technologies: ["sass", "d3", "responsive"],
     link: "https://aburto22.github.io/bicycle-doping/",
@@ -97,7 +97,7 @@ const PROJECTS = [
   },
   {
     name: "US GDP",
-    img: "us-gdp.webp",
+    img: "us-gdp.png",
     description: "Bar graph showing GDP of the United States per Quarter.",
     technologies: ["css", "d3", "responsive"],
     link: "https://aburto22.github.io/us-gdp/",
@@ -106,7 +106,7 @@ const PROJECTS = [
   },
   {
     name: "Random Quote Machine",
-    img: "random-quote-machine.webp",
+    img: "random-quote-machine.png",
     description: "Generate inspiring quotes from great people.",
     technologies: ["sass", "react", "responsive"],
     link: "https://aburto22.github.io/random-quote-machine/",
@@ -115,7 +115,7 @@ const PROJECTS = [
   },
   {
     name: "Little Piano",
-    img: "little-piano.webp",
+    img: "little-piano.png",
     description: "An online little piano you can play with the keyboard.",
     technologies: ["sass", "react", "responsive"],
     link: "https://aburto22.github.io/little-piano/",
@@ -124,7 +124,7 @@ const PROJECTS = [
   },
   {
     name: "Markdown Previewer",
-    img: "markdown-previewer.webp",
+    img: "markdown-previewer.png",
     description: "Type on one side, see the output on the other side.",
     technologies: ["sass", "react", "responsive"],
     link: "https://aburto22.github.io/markdown-previewer/",
@@ -133,7 +133,7 @@ const PROJECTS = [
   },
   {
     name: "Product Landing Page",
-    img: "watercolor.webp",
+    img: "watercolor.png",
     description: "A fictitious website for selling watercolour paintings.",
     technologies: ["sass", "bootstrap", "react"],
     link: "https://aburto22.github.io/watercolor/",
@@ -142,7 +142,7 @@ const PROJECTS = [
   },
   {
     name: "Calculator",
-    img: "calculator.webp",
+    img: "calculator.png",
     description: "A simple online calculator.",
     technologies: ["sass", "react", "responsive"],
     link: "https://aburto22.github.io/calculator/",
@@ -151,7 +151,7 @@ const PROJECTS = [
   },
   {
     name: "Technical Site",
-    img: "photography-intro.webp",
+    img: "photography-intro.png",
     description:
       "A technical site explaining a bit about photography and exposure.",
     technologies: ["pug", "sass", "bootstrap"],
@@ -161,7 +161,7 @@ const PROJECTS = [
   },
   {
     name: "Pizza Form",
-    img: "pizza-form.webp",
+    img: "pizza-form.png",
     description: "A form to order pizza from a fictitious restaurant.",
     technologies: ["pug", "sass", "responsive"],
     link: "https://aburto22.github.io/pizza-form/",
@@ -170,7 +170,7 @@ const PROJECTS = [
   },
   {
     name: "Tribute Page",
-    img: "tribute-page.webp",
+    img: "tribute-page.png",
     description: "A tribute page for Sebastiao Salgado.",
     technologies: ["html", "css", "responsive"],
     link: "https://aburto22.github.io/tribute-page/",

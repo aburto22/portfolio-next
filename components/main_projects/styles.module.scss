@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+.mainProjectSize {
+  max-width: $width-main-project;
+  max-height: $height-main-project;
+}
+
+.section {
+  position: relative;
+  padding: 2.5rem 0.5rem;
+  background-color: $gray-light;
+
+}
+
+.sectionDark {
+  background-color: $gray-dark-bg-light;
+}
+
+.anchor {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -5rem;
+}
+
+.container {
+  height: 100%;
+  max-width: $screen-lg;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.content {
+  max-width: $screen-sm;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transition: opacity 700ms;
+}
+
+.link {
+  color: $blue-link;
+  text-decoration: underline;
+}
+
+.linkDark {
+  color: $blue-link-dark;
+}
+
+.link:hover {
+  color: $blue-hover
+}
+
+.projectContainer {
+  width: 100%;
+}
+
+.projectList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.showing {
+  opacity: 1;
+}

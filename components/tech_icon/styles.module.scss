@@ -1,8 +1,7 @@
 @import '../../styles/variables.scss';
 
 .techIcon {
-  padding: 0.5rem;
-  margin: 0.25rem;
+  padding: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 0.25rem;
   position: relative;
@@ -10,10 +9,18 @@
   justify-content: center;
   align-items: center;
   background-color: $light-white;
+  height: 100%;
+  width: 100%;
 }
 
 .techIconDark {
   box-shadow: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
+}
+
+.iconContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .tooltip {
@@ -25,7 +32,7 @@
   text-align: center;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 0.25rem 0.5rem;
-  display: hidden;
+  display: none;
   color: $gray-primary;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -48,9 +55,4 @@
 
 .techIcon:hover .tooltip {
   display: block;
-}
-
-.techIconDefaultSize {
-  height: 1.5rem;
-  width: 1.5rem;
 }

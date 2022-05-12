@@ -14,7 +14,8 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 22rem;
+  height: 30rem;
   transition: opacity 700ms;
   opacity: 0;
 
@@ -108,6 +109,13 @@
 .buttonSecondaryLayout {
   width: 100%;
   margin: 0 1rem 0 0.5rem;
+}
+
+.iconItem {
+  display: block;
+  height: 2.75rem;
+  width: 2.75rem;
+  margin: 0.25rem;
 }
 
 .showing {
