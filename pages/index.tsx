@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Layout from '../components/layout'
+import Welcome from '../components/welcome';
 
 const Home: NextPage = () => {
   return (
@@ -8,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Alejandro Aburto S.</title>
       </Head>
-      <h1>My page</h1>
+      <Welcome />
     </Layout>
   )
 }
