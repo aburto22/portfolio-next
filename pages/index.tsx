@@ -5,7 +5,7 @@ import Welcome from '../components/welcome';
 import MainProjects from '../components/main_projects';
 import MainAbout from '../components/main_about';
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
     <Layout>
       <Head>
@@ -18,4 +18,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default HomePage;

@@ -13,7 +13,9 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={`${styles.container} ${darkTheme && styles.containerDark}`}>
       <Header />
-      {children}
+      <main>
+        {children}
+      </main>
       <Footer />
     </div>
   )

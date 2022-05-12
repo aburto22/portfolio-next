@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Travel Buddy",
+    "img": "travel-buddy.png",
+    "description": "Share trips and experiences, and find your next travel buddy",
+    "technologies": [
+      "react",
+      "redux",
+      "docker",
+      "node",
+      "typescript",
+      "heroku",
+      "postgresql",
+      "passport"
+    ],
+    "link": "https://travel-buddy-cn.herokuapp.com/",
+    "github": "https://github.com/qatta93/travel_buddy",
+    "category": "main"
+  },
+  {
+    "name": "Read My List",
+    "img": "read-my-list.png",
+    "description":
+      "Manage your reading list efficiently by adding tags, sorting and filtering.",
+    "technologies": ["react", "node", "mongo", "typescript", "heroku"],
+    "link": "https://read-my-list.herokuapp.com/",
+    "github": "https://github.com/aburto22/read-my-list",
+    "category": "main"
+  },
+  {
+    "name": "LOTR Quotes",
+    "img": "lotr-quotes.png",
+    "description": "Search for characters and quotes from the Lord of the Rings",
+    "technologies": ["react", "redux", "docker", "node", "typescript", "heroku"],
+    "link": "https://quotes-lotr.herokuapp.com/",
+    "github": "https://github.com/aburto22/lotr",
+    "category": "main"
+  },
+  {
+    "name": "Hat Me Now",
+    "img": "hat-me-now.png",
+    "description":
+      "Fictitious E-Commerce website to sell hats. Users can create an account and pass orders.",
+    "technologies": ["react", "tailwind", "firebase"],
+    "link": "https://hat-me-now.vercel.app/",
+    "github": "https://github.com/aburto22/hat-me-now",
+    "category": "main"
+  },
+  {
+    "name": "Microservices",
+    "img": "microservices.png",
+    "description":
+      "Simple website that displays a timestamp and headers of your request.",
+    "technologies": ["react", "tailwind", "node", "heroku"],
+    "link": "https://microservices.herokuapp.com/",
+    "github": "https://github.com/aburto22/microservices",
+    "category": ""
+  },
+  {
+    "name": "Kickstarter Pledges",
+    "img": "kickstarter-pledges.png",
+    "description": "Treemap diagram showing several Kickstarter pledges.",
+    "technologies": ["sass", "d3", "responsive"],
+    "link": "https://aburto22.github.io/kickstarter-pledges/",
+    "github": "https://github.com/aburto22/kickstarter-pledges",
+    "category": ""
+  },
+  {
+    "name": "USA Bachelor Degree",
+    "img": "usa-bachelor-degree.png",
+    "description":
+      "Choropleth map showing percentage of people with bachelor degree per county in the USA.",
+    "technologies": ["sass", "d3", "responsive"],
+    "link": "https://aburto22.github.io/usa-bachelor-degree/",
+    "github": "https://github.com/aburto22/usa-bachelor-degree",
+    "category": ""
+  },
+  {
+    "name": "Global Temperature",
+    "img": "global-temperature.png",
+    "description": "Heat map showing earth global temperature.",
+    "technologies": ["sass", "d3", "responsive"],
+    "link": "https://aburto22.github.io/global-temperature/",
+    "github": "https://github.com/aburto22/global-temperature",
+    "category": ""
+  },
+  {
+    "name": "Bicycle Doping",
+    "img": "bicycle-doping.png",
+    "description": "Scatter plot showing doping in professional cycling races.",
+    "technologies": ["sass", "d3", "responsive"],
+    "link": "https://aburto22.github.io/bicycle-doping/",
+    "github": "https://github.com/aburto22/bicycle-doping",
+    "category": ""
+  },
+  {
+    "name": "US GDP",
+    "img": "us-gdp.png",
+    "description": "Bar graph showing GDP of the United States per Quarter.",
+    "technologies": ["css", "d3", "responsive"],
+    "link": "https://aburto22.github.io/us-gdp/",
+    "github": "https://github.com/aburto22/us-gdp",
+    "category": ""
+  },
+  {
+    "name": "Random Quote Machine",
+    "img": "random-quote-machine.png",
+    "description": "Generate inspiring quotes from great people.",
+    "technologies": ["sass", "react", "responsive"],
+    "link": "https://aburto22.github.io/random-quote-machine/",
+    "github": "https://github.com/aburto22/random-quote-machine",
+    "category": ""
+  },
+  {
+    "name": "Little Piano",
+    "img": "little-piano.png",
+    "description": "An online little piano you can play with the keyboard.",
+    "technologies": ["sass", "react", "responsive"],
+    "link": "https://aburto22.github.io/little-piano/",
+    "github": "https://github.com/aburto22/little-piano",
+    "category": ""
+  },
+  {
+    "name": "Markdown Previewer",
+    "img": "markdown-previewer.png",
+    "description": "Type on one side, see the output on the other side.",
+    "technologies": ["sass", "react", "responsive"],
+    "link": "https://aburto22.github.io/markdown-previewer/",
+    "github": "https://github.com/aburto22/markdown-previewer",
+    "category": ""
+  },
+  {
+    "name": "Product Landing Page",
+    "img": "watercolor.png",
+    "description": "A fictitious website for selling watercolour paintings.",
+    "technologies": ["sass", "bootstrap", "react"],
+    "link": "https://aburto22.github.io/watercolor/",
+    "github": "https://github.com/aburto22/watercolor",
+    "category": ""
+  },
+  {
+    "name": "Calculator",
+    "img": "calculator.png",
+    "description": "A simple online calculator.",
+    "technologies": ["sass", "react", "responsive"],
+    "link": "https://aburto22.github.io/calculator/",
+    "github": "https://github.com/aburto22/calculator",
+    "category": ""
+  },
+  {
+    "name": "Technical Site",
+    "img": "photography-intro.png",
+    "description":
+      "A technical site explaining a bit about photography and exposure.",
+    "technologies": ["pug", "sass", "bootstrap"],
+    "link": "https://aburto22.github.io/photography-intro/",
+    "github": "https://github.com/aburto22/photography-intro",
+    "category": ""
+  },
+  {
+    "name": "Pizza Form",
+    "img": "pizza-form.png",
+    "description": "A form to order pizza from a fictitious restaurant.",
+    "technologies": ["pug", "sass", "responsive"],
+    "link": "https://aburto22.github.io/pizza-form/",
+    "github": "https://github.com/aburto22/pizza-form",
+    "category": ""
+  },
+  {
+    "name": "Tribute Page",
+    "img": "tribute-page.png",
+    "description": "A tribute page for Sebastiao Salgado.",
+    "technologies": ["html", "css", "responsive"],
+    "link": "https://aburto22.github.io/tribute-page/",
+    "github": "https://github.com/aburto22/tribute-page",
+    "category": ""
+  }
+]

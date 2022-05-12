@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Link from 'next/link';
 import ThemeContext from '../../context/theme_context';
 import TechIcon from '../tech_icon';
-import ICONS from '../../data/icons';
+import ICONS from '../../data/icons.json';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
 import * as ROUTES from '../../data/routes';
 import styles from './styles.module.scss';

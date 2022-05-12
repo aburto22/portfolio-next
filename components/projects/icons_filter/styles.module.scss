@@ -1,0 +1,36 @@
+@import '../../../styles/variables.scss';
+
+.filterList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: $light-white;
+  color: $gray-primary;
+}
+
+.filterButtonSelected {
+  background-color: $gray-primary;
+  color: white;
+}
+
+.filterButtonDark {
+  box-shadow: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
+}
+
+.imageContainer {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
