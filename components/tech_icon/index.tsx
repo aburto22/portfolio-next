@@ -19,13 +19,12 @@ const TechIcon = ({ icon, tooltip }: TechIconProps) => {
           {icon.name}
         </div>
       )}
-      <div className={styles.iconContainer}>
-        <Image
-          src={`/icons/${icon.icon}.png`}
-          alt={icon.alt}
-          layout="fill"
-        />
-      </div>
+      <Image
+        src={`/icons/${icon.icon}.png`}
+        alt={icon.alt}
+        height={72}
+        width={72}
+      />
     </div>
   );
 }

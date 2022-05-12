@@ -30,14 +30,13 @@ const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
           onClick={() => handleClick(icon.icon)}
           className={`${styles.filterButton} ${darkTheme && styles.filterButtonDark} ${filter === icon.icon && styles.filterButtonSelected}`}
         >
-          <div className={styles.imageContainer}>
-            <Image
-              src={`/icons/${icon.icon}.png`}
-              alt={icon.alt}
-              layout="fill"
-            />
-          </div>
-          <p>{icon.name}</p>
+          <Image
+            src={`/icons/${icon.icon}.png`}
+            alt={icon.alt}
+            width={40}
+            height={40}
+          />
+          <p className={styles.iconName}>{icon.name}</p>
         </button>
       </li>
     ));

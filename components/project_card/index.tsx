@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ThemeContext from '../../context/theme_context';
-import ICONS from '../../data/icons';
+import ICONS from '../../data/icons.json';
 import Image from 'next/image';
 import TechIcon from '../tech_icon';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
@@ -32,13 +32,12 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
       ref={ref}
     >
       <h2 className={styles.title}>{name}</h2>
-      <div className={styles.imageContainer}>
         <Image
           src={`/images/projects/${img}`}
           alt={description}
-          layout="fill"
+          width={1536}
+          height={2048}
         />
-      </div>
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a
           href={link}

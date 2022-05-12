@@ -1,1 +1,63 @@
 @import '../../styles/variables.scss';
+
+.section {
+  min-height: $height-full-nav-footer;
+  max-width: $screen-md;
+  margin: 5rem auto 0;
+  position: relative;
+  padding: 2rem 1rem 13rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionDark {
+  background-color: $gray-dark-bg;
+}
+
+.title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.imageContainer {
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  max-width: $screen-sm;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.imageContainerDark {
+  box-shadow: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
+}
+
+.textContainer {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.anchor {
+  position: absolute;
+  top: -6rem;
+  width: 0;
+  height: 0;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .imageContainer {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .section {
+    margin-left: $width-side-nav;
+  }
+  
+}

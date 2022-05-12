@@ -15,9 +15,9 @@
   overflow: hidden;
   position: relative;
   width: 22rem;
-  height: 30rem;
   transition: opacity 700ms;
   opacity: 0;
+  border: 2px solid transparent;
 
 }
 
@@ -28,14 +28,6 @@
 .title {
   opacity: 0;
   position: absolute;
-}
-
-.imageContainer {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  order: -1;
-  border: 2px solid transparent;
 }
 
 .projectContent {
@@ -77,12 +69,11 @@
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .contentDescription {
   text-align: center;
-  margin-bottom: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }

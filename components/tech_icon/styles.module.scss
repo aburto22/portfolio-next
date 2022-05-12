@@ -9,24 +9,16 @@
   justify-content: center;
   align-items: center;
   background-color: $light-white;
-  height: 100%;
-  width: 100%;
 }
 
 .techIconDark {
   box-shadow: 0 1px 3px 0 rgba(256, 256, 256, 0.1), 0 1px 2px 0 rgba(256, 256, 256, 0.06);
 }
 
-.iconContainer {
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
-
 .tooltip {
   position: absolute;
   border-radius: 0.25rem;
-  background-color: $light-white;
+  background-color: $gray-200;
   top: -2.5rem;
   width: max-content;
   text-align: center;
@@ -50,7 +42,7 @@
   margin-left: -8px;
   border-width: 8px;
   border-style: solid;
-  border-color: white transparent transparent transparent;
+  border-color: $gray-200 transparent transparent transparent;
 }
 
 .techIcon:hover .tooltip {
