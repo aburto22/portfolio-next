@@ -12,4 +12,6 @@ export interface IIcon {
   name: string;
   icon: string;
   alt: string;
+  category: string;
+  filter: boolean;
 }
