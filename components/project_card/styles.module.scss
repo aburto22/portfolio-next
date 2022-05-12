@@ -30,10 +30,12 @@
   position: absolute;
 }
 
-.image {
-  max-width: 100%;
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
   order: -1;
-  border: 4px solid transparent;
+  border: 2px solid transparent;
 }
 
 .projectContent {
@@ -80,7 +82,7 @@
 
 .contentDescription {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }

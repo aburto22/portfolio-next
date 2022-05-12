@@ -32,12 +32,13 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
       ref={ref}
     >
       <h2 className={styles.title}>{name}</h2>
-      <Image
-        src={`/images/projects/${img}`}
-        alt={description}
-        className={styles.image}
-        layout="fill"
-      />
+      <div className={styles.imageContainer}>
+        <Image
+          src={`/images/projects/${img}`}
+          alt={description}
+          layout="fill"
+        />
+      </div>
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a
           href={link}
