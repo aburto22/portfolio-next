@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -36,5 +37,5 @@ module.exports = {
       exceptions: ['Component']
     }],
   },
-  ignorePatterns: ['.eslintrc.js', 'node_modules']
+  ignorePatterns: ['.eslintrc.js', 'node_modules', 'next.config.js']
 };

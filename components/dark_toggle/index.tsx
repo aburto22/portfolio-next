@@ -9,10 +9,8 @@ const DarkToggle = () => {
 
   const handleDark = () => {
     if (darkTheme) {
-      localStorage.theme = 'light';
       return dispatch(setTheme(false));
     }
-    localStorage.theme = 'dark';
     return dispatch(setTheme(true));
   };
 

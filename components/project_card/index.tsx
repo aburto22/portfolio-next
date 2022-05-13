@@ -68,3 +68,7 @@ const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) =
 };
 
 export default ProjectCard;
+
+ProjectCard.defaultProps = {
+  size: styles.defaultSize,
+};

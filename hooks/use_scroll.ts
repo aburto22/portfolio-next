@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 const useScroll = () => {
   const isScrolling = useRef(false);
@@ -8,9 +8,9 @@ const useScroll = () => {
     setTimeout(() => {
       isScrolling.current = false;
     }, 600);
-  }
+  };
 
   return { isScrolling, activateScrollingDelay };
-}
+};
 
 export default useScroll;
