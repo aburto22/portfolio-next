@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import ThemeContext from '../../../context/theme_context';
 import styles from './styles.module.scss';
 
 interface SideNavLinkProps {
@@ -8,6 +9,7 @@ interface SideNavLinkProps {
 
 const SideNavLink = ({ name, target }: SideNavLinkProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
+  const [darkTheme] = useContext(ThemeContext);
 
   useEffect(() => {
     setAnchor(document.querySelector(target));
@@ -24,10 +26,10 @@ const SideNavLink = ({ name, target }: SideNavLinkProps) => {
   }
 
   return (
-    <li className="flex border-b border-gray-200 dark:border-gray-primary">
+    <li className={`${styles.linkItem} ${darkTheme && styles.linkItemDark}`}>
       <a
         href={target}
-        className="py-2 hover:text-blue-hover pl-2 w-full text-sm"
+        className={styles.link}
         onClick={handleClick}
       >
         {name}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as ROUTES from '../../data/routes.json';
 import DarkToggle from '../dark_toggle';
-import SideNav from '../side_nav';
+import SideNav from './side_nav';
 import Svg from '../svg';
 import styles from './styles.module.scss';
 import { IAnchor } from '../../types';
