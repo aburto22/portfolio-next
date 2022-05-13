@@ -29,3 +29,16 @@
 .buttonSecondary:hover {
   background: $gradient-gray-hover
 }
+
+.asidePlaceholder {
+  display: none;
+}
+
+@media screen and (min-width: $screen-md) {
+  .asidePlaceholder {
+    width: $width-side-nav;
+    display: block;
+    height: 1rem;
+    float: left;
+  }
+}

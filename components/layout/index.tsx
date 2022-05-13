@@ -6,9 +6,10 @@ import styles from './styles.module.scss';
 interface LayoutProps {
   children: React.ReactNode;
   Header: JSX.Element;
+  sidebar?: boolean;
 }
 
-const Layout = ({ children, Header }: LayoutProps) => {
+const Layout = ({ children, Header, sidebar }: LayoutProps) => {
   const [darkTheme] = useContext(ThemeContext);
   return (
     <div className={`${styles.container} ${darkTheme && styles.containerDark}`}>
@@ -16,9 +17,13 @@ const Layout = ({ children, Header }: LayoutProps) => {
       <main>
         {children}
       </main>
-      <Footer />
+      <Footer sidebar={sidebar} />
     </div>
   )
+}
+
+Layout.defaultProps = {
+  sidebar: false,
 }
 
 export default Layout;

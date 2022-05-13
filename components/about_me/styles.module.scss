@@ -1,9 +1,5 @@
 @import '../../styles/variables.scss';
 
-.asidePlaceholder {
-  display: none;
-}
-
 .section {
   min-height: $height-full-nav-footer;
   max-width: $screen-md;
@@ -49,13 +45,4 @@
   top: -6rem;
   width: 0;
   height: 0;
-}
-
-@media screen and (min-width: $screen-md) {
-  .asidePlaceholder {
-    width: $width-side-nav;
-    display: block;
-    height: 1rem;
-    float: left;
-  }
 }

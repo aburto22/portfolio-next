@@ -3,6 +3,7 @@ import Svg from "../svg/";
 import Form from "./form";
 import ThemeContext from "../../context/theme_context";
 import styles from './styles.module.scss';
+import styleUtils from '../../styles/utils.module.scss';
 
 interface FooterProps {
   sidebar: boolean;
@@ -13,7 +14,7 @@ const Footer = ({ sidebar }: FooterProps) => {
 
   return (
     <>
-      {sidebar && <div className={styles.asidePlaceholder} />}
+      {sidebar && <div className={styleUtils.asidePlaceholder} />}
       <footer
         className={`${styles.footer} ${darkTheme && styles.footerDark}`}
       >

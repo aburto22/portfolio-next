@@ -6,13 +6,14 @@ import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
 import styles from './styles.module.scss';
 import aboutImage from '../../public/images/about-me/about-me.jpg';
+import styleUtils from '../../styles/utils.module.scss';
 
 export default function About() {
   const [darkTheme] = useContext(ThemeContext);
   
   return (
     <>
-      <div className={styles.asidePlaceholder} />
+      <div className={styleUtils.asidePlaceholder} />
       <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
         <BackHomeArrow />
         <h1 className={styles.title}>
