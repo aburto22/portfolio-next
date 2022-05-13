@@ -1,1 +1,81 @@
 @import '../../styles/variables.scss';
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 30;
+  background-color: $light-white;
+}
+
+.headerDark {
+  background-color: $gray-dark-bg;
+}
+
+.nav {
+  height: $height-header;
+  width: 100%;
+  border-bottom: 1px solid $gray-200;
+}
+
+.navDark {
+  border-bottom: 1px solid $gray-primary;
+}
+
+.navList {
+  max-width: $screen-lg;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.5rem;
+}
+
+.logoItem {
+  display: block;
+}
+
+.logoLink {
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  font-family: $font-hand;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.darkToggleContainer {
+  margin-left: auto;
+  display: hidden;
+}
+
+.buttonItem {
+  margin-left: auto;
+}
+
+.buttonItemHidden {
+  display: none;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.openButtonSvg {
+  height: 2rem;
+  width: 2rem;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .darkToggleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonItem {
+    display: hidden;
+  }
+}

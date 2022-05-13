@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import Link from 'next/link';
+import ThemeContext from '../../context/theme_context';
 import * as ROUTES from '../../data/routes.json';
 import DarkToggle from '../dark_toggle';
 import SideNav from './side_nav';
@@ -12,6 +14,7 @@ interface HeaderSimpleProps {
 
 const HeaderWithSide = ({ anchors }: HeaderSimpleProps) => {
   const [isSideShowing, setIsSideShowing] = useState(false);
+  const [darkTheme] = useContext(ThemeContext);
 
   function handleToggle() {
     setIsSideShowing(true);
@@ -19,46 +22,41 @@ const HeaderWithSide = ({ anchors }: HeaderSimpleProps) => {
 
   return (
     <>
-      <header className="fixed w-full top-0 z-30 bg-white dark:bg-gray-dark-bg">
-        <nav className="h-20 w-full border-b border-gray-200 dark:border-gray-primary">
-          <ul className="max-w-screen-lg mx-auto flex flex-row items-center h-full px-2">
-            <li className="block">
-              <a
-                href={ROUTES.home}
-                className="p-2 mx-1 font-hand text-2xl font-bold"
-              >
-                Alejandro Aburto S.
-              </a>
+      <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
+        <nav className={`${styles.nav} ${darkTheme && styles.navDark}`}>
+          <ul className={styles.navList}>
+            <li className={styles.logoItem}>
+              <Link href={ROUTES.home}>
+                <a className={styles.logoLink}>
+                  Alejandro Aburto S.
+                </a>
+              </Link>
             </li>
-            <li className="items-center justify-center ml-auto hidden sm:flex">
+            <li className={styles.darkToggleContainer}>
               <DarkToggle />
             </li>
             <li
-              className={`${
-                !isSideShowing ? "block" : "hidden"
-              } sm:hidden ml-auto`}
+              className={`${styles.buttonItem} ${isSideShowing && styles.buttonItemHidden}`}
             >
               <button
                 type="button"
                 onClick={handleToggle}
-                className="px-4 py-2 rounded"
+                className={styles.button}
                 aria-label="open menu"
               >
-                <Svg name="menu" className="h-8 w-8" />
+                <Svg name="menu" className={styles.buttonSvg} />
               </button>
             </li>
             <li
-              className={`${
-                isSideShowing ? "block" : "hidden"
-              } sm:hidden ml-auto`}
+              className={`${styles.buttonItem} ${!isSideShowing && styles.buttonItemHidden}`}
             >
               <button
                 type="button"
                 onClick={handleToggle}
-                className="px-4 py-2 rounded"
+                className={styles.button}
                 aria-label="close menu"
               >
-                <Svg name="close" className="h-8 w-8" />
+                <Svg name="close" className={styles.buttonSvg} />
               </button>
             </li>
           </ul>
