@@ -1,7 +1,6 @@
-import { useContext } from 'react';
+import { useAppSelector } from '../../hooks/use_redux';
 import Svg from '../svg';
 import Form from './form';
-import ThemeContext from '../../context/theme_context';
 import styles from './styles.module.scss';
 import styleUtils from '../../styles/utils.module.scss';
 
@@ -10,7 +9,7 @@ interface FooterProps {
 }
 
 const Footer = ({ sidebar = false }: FooterProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   return (
     <>

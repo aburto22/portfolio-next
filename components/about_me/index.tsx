@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Image from 'next/image';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import SubHeading from '../sub_heading';
 import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
@@ -9,7 +8,7 @@ import aboutImage from '../../public/images/about-me/about-me.jpg';
 import styleUtils from '../../styles/utils.module.scss';
 
 const AboutMe = () => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   return (
     <>

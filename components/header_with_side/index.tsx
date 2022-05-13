@@ -1,9 +1,7 @@
-import React, {
-  useRef, useState, useEffect, useContext,
-} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
-import ThemeContext from '../../context/theme_context';
-import * as ROUTES from '../../data/routes.json';
+import { useAppSelector } from '../../hooks/use_redux';
+import ROUTES from '../../data/routes.json';
 import DarkToggle from '../dark_toggle';
 import SideNav from './side_nav';
 import Svg from '../svg';
@@ -16,7 +14,7 @@ interface HeaderSimpleProps {
 
 const HeaderWithSide = ({ anchors = [] }: HeaderSimpleProps) => {
   const [isSideShowing, setIsSideShowing] = useState(false);
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
   const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

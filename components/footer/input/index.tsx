@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import ThemeContext from '../../../context/theme_context';
+import { useAppSelector } from '../../../hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface InputProps {
@@ -13,7 +12,7 @@ interface InputProps {
 const Input = ({
   field, setField, name, text, fieldValid,
 }: InputProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const type = field === 'email' ? 'email' : 'text';
 

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
 import Link from 'next/link';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import Svg from '../svg';
 import ROUTES from '../../data/routes.json';
 import styles from './styles.module.scss';
 
 const BackHomeArrow = () => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   return (
     <div className={styles.container}>

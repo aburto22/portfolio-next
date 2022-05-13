@@ -1,13 +1,13 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import { useAppSelector } from '../../hooks/use_redux';
 import Svg from '../svg';
 import ScrollLink from './scroll_link';
 import DarkToggle from '../dark_toggle';
-import ThemeContext from '../../context/theme_context';
 import styles from './styles.module.scss';
 
 const Header = () => {
   const [isNavShowing, setIsNavShowing] = useState(false);
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleToggle = () => setIsNavShowing((val) => !val);
 

@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Link from 'next/link';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import TechIcon from '../tech_icon';
 import ICONS from '../../data/icons.json';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
@@ -13,7 +12,7 @@ const MainAbout = () => {
   const [refFront, isShowingFront] = useElementOnScreen<HTMLUListElement>();
   const [refBack, isShowingBack] = useElementOnScreen<HTMLUListElement>();
   const [refGeneral, isShowingGeneral] = useElementOnScreen<HTMLUListElement>();
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const createIcon = (icon: IIcon, i: number) => {
     const transitionDelay = `${i * 100}ms`;

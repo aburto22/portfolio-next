@@ -1,5 +1,5 @@
-import React, { useRef, useContext } from 'react';
-import ThemeContext from '../../../context/theme_context';
+import React, { useRef } from 'react';
+import { useAppSelector } from '../../../hooks/use_redux';
 import SideNavLink from '../side_nav_link';
 import DarkToggle from '../../dark_toggle';
 import styles from './styles.module.scss';
@@ -12,7 +12,7 @@ interface SideNavProps {
 
 const SideNav = ({ anchors, isSideShowing }: SideNavProps) => {
   const navRef = useRef<HTMLElement>(null);
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const AnchorsComponent = anchors.map((anchor) => (
     <SideNavLink name={anchor.name} target={anchor.target} key={anchor.name} />

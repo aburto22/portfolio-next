@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Image from 'next/image';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import { IIcon } from '../../types';
 import styles from './styles.module.scss';
 
@@ -10,7 +9,8 @@ interface TechIconProps {
 }
 
 const TechIcon = ({ icon, tooltip = false }: TechIconProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
+
   return (
     <div className={`${styles.techIcon} ${darkTheme && styles.techIconDark}`}>
       {tooltip && (

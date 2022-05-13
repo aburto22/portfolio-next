@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import emailjs, { init } from 'emailjs-com';
-import ThemeContext from '../../../context/theme_context';
+import { useAppSelector } from '../../../hooks/use_redux';
 import Input from '../input';
 import TextArea from '../text_area';
 import styles from './styles.module.scss';
@@ -15,7 +15,7 @@ const Form = () => {
     code: '',
   });
 
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   init(process.env.REACT_APP_EMAILJS_USER_ID || '');
 

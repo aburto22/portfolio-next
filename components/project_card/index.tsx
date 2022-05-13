@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Image from 'next/image';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import ICONS from '../../data/icons.json';
 import TechIcon from '../tech_icon';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
@@ -10,7 +9,7 @@ import styleUtils from '../../styles/utils.module.scss';
 
 interface ProjectCardProps {
   project: IProject;
-  size: string;
+  size?: string;
 }
 
 const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) => {
@@ -18,7 +17,7 @@ const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) =
     name, img, description, technologies, link, github,
   } = project;
   const [ref, isShowing] = useElementOnScreen<HTMLLIElement>();
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const IconComponents = ICONS.filter((icon) => technologies.includes(icon.icon)).map((icon) => (
     <li key={icon.name} className={styles.iconItem}>

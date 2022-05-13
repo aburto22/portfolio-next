@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import ThemeContext from '../../../context/theme_context';
+import { useAppSelector } from '../../../hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface TextAreaProps {
@@ -13,7 +12,7 @@ interface TextAreaProps {
 const TextArea = ({
   field, setField, name, text, fieldValid,
 }: TextAreaProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleClick = (event: React.MouseEvent) => {
     const nextElementSibling = event.currentTarget.nextElementSibling as HTMLElement;

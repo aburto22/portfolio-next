@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Image from 'next/image';
-import ThemeContext from '../../../context/theme_context';
+import { useAppSelector } from '../../../hooks/use_redux';
 import ICONS from '../../../data/icons.json';
 import styles from './styles.module.scss';
 
@@ -10,7 +9,7 @@ interface IconsFilterProps {
 }
 
 const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleClick = (iconName: string) => {
     if (filter === iconName) {

@@ -1,18 +1,19 @@
-import { useContext } from 'react';
 import Svg from '../svg';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector, useAppDispatch } from '../../hooks/use_redux';
+import { setTheme } from '../../slices/dark_theme';
 import styles from './styles.module.scss';
 
 const DarkToggle = () => {
-  const [darkTheme, setDarkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
+  const dispatch = useAppDispatch();
 
   const handleDark = () => {
     if (darkTheme) {
       localStorage.theme = 'light';
-      return setDarkTheme(false);
+      return dispatch(setTheme(false));
     }
     localStorage.theme = 'dark';
-    return setDarkTheme(true);
+    return dispatch(setTheme(true));
   };
 
   return (

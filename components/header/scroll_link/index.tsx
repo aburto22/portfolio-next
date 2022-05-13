@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useAppSelector } from '../../../hooks/use_redux';
 import ScrollContext from '../../../context/scroll_context';
-import ThemeContext from '../../../context/theme_context';
 import styles from './styles.module.scss';
 
 interface ScrollLinkProps {
@@ -12,7 +12,7 @@ interface ScrollLinkProps {
 const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
   const { activateScrollingDelay } = useContext(ScrollContext);
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   useEffect(() => {
     setAnchor(document.querySelector(`#${target}`));

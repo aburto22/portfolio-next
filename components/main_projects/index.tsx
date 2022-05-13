@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
 import Link from 'next/link';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import ProjectCard from '../project_card';
 import PROJECTS from '../../data/projects.json';
 import ROUTES from '../../data/routes.json';
@@ -9,7 +8,7 @@ import useElementOnScreen from '../../hooks/use_element_on_screen';
 import styles from './styles.module.scss';
 
 const Projects = () => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
   const MainProjectsComponent = PROJECTS.filter(

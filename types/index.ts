@@ -1,3 +1,5 @@
+import store from '../store';
+
 export interface IProject {
   name: string;
   img: string;
@@ -20,3 +22,6 @@ export interface IAnchor {
   name: string;
   target: string;
 }
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

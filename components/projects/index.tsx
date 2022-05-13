@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import ThemeContext from '../../context/theme_context';
+import React, { useState } from 'react';
+import { useAppSelector } from '../../hooks/use_redux';
 import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
 import IconsFilter from './icons_filter';
@@ -10,7 +10,7 @@ import { IProject } from '../../types';
 
 const About = () => {
   const [filter, setFilter] = useState('');
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const ProjectList = PROJECTS
     .filter((project: IProject) => (filter ? project.technologies.includes(filter) : true))

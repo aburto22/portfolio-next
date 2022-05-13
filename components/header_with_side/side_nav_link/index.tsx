@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import ThemeContext from '../../../context/theme_context';
+import React, { useState, useEffect } from 'react';
+import { useAppSelector } from '../../../hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface SideNavLinkProps {
@@ -9,7 +9,7 @@ interface SideNavLinkProps {
 
 const SideNavLink = ({ name, target }: SideNavLinkProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   useEffect(() => {
     setAnchor(document.querySelector(target));

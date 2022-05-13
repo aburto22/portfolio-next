@@ -1,6 +1,5 @@
-import { useContext } from 'react';
 import Footer from '../footer';
-import ThemeContext from '../../context/theme_context';
+import { useAppSelector } from '../../hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface LayoutProps {
@@ -10,7 +9,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, Header, sidebar = false }: LayoutProps) => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
   return (
     <div className={`${styles.container} ${darkTheme && styles.containerDark}`}>
       {Header}

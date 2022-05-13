@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import { useAppSelector } from '../../hooks/use_redux';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
 import ScrollButton from './scroll_button';
 import styles from './styles.module.scss';
 import styleUtils from '../../styles/utils.module.scss';
-import ThemeContext from '../../context/theme_context';
 
 const Welcome = () => {
-  const [darkTheme] = useContext(ThemeContext);
+  const darkTheme = useAppSelector((state) => state.darkTheme);
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
   return (
