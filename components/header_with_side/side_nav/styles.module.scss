@@ -1,1 +1,50 @@
 @import '../../../styles/variables.scss';
+
+.sideMenu {
+  width: $width-side-nav;
+  padding: 1rem;
+  position: fixed;
+  background-color: $light-white;
+  height: 100%;
+  border-right: 1px solid $gray-200;
+  z-index: 10;
+  transition: all 500ms;
+  left: -($screen-md);
+}
+
+.sideMenuDark {
+  background-color: $gray-dark-bg;
+  border-right: 1px solid $gray-primary;
+}
+
+.sideMenuShowing {
+  left: 0;
+}
+
+.title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  border-bottom: 1px solid $gray-200;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.titleDark {
+  border-bottom: 1px solid $gray-primary;
+}
+
+.darkToggleContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: $screen-md) {
+  .sideMenu {
+    left: 0;
+  }
+
+  .darkToggleContainer {
+    display: none;
+  }
+}
