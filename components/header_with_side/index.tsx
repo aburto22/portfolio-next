@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import ThemeContext from '../../context/theme_context';
 import * as ROUTES from '../../data/routes.json';
@@ -15,14 +15,39 @@ interface HeaderSimpleProps {
 const HeaderWithSide = ({ anchors }: HeaderSimpleProps) => {
   const [isSideShowing, setIsSideShowing] = useState(false);
   const [darkTheme] = useContext(ThemeContext);
+  const headerRef = useRef<HTMLElement>(null);
 
-  function handleToggle() {
-    setIsSideShowing(true);
+  useEffect(() => {
+    const closeMenu = (event: MouseEvent) => {
+      if (!isSideShowing) {
+        return;
+      }
+
+      const element = event.target as HTMLElement;
+
+      if (element.tagName === 'A') {
+        return setIsSideShowing(false);
+      }
+
+      if (!headerRef.current?.contains(element)) {
+        setIsSideShowing(false);
+      }
+    }
+
+    window.addEventListener('click', closeMenu);
+
+    return () => window.removeEventListener('click', closeMenu);
+  }, [isSideShowing]);
+
+  const handleToggle = () => {
+    setIsSideShowing((currentState) => !currentState);
   }
+
+  const hasAnchors = anchors.length > 0;
 
   return (
     <>
-      <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
+      <header className={`${styles.header} ${darkTheme && styles.headerDark}`} ref={headerRef}>
         <nav className={`${styles.nav} ${darkTheme && styles.navDark}`}>
           <ul className={styles.navList}>
             <li className={styles.logoItem}>
@@ -35,40 +60,35 @@ const HeaderWithSide = ({ anchors }: HeaderSimpleProps) => {
             <li className={styles.darkToggleContainer}>
               <DarkToggle />
             </li>
-            <li
-              className={`${styles.buttonItem} ${isSideShowing && styles.buttonItemHidden}`}
-            >
-              <button
-                type="button"
-                onClick={handleToggle}
-                className={styles.button}
-                aria-label="open menu"
-              >
-                <Svg name="menu" className={styles.buttonSvg} />
-              </button>
-            </li>
-            <li
-              className={`${styles.buttonItem} ${!isSideShowing && styles.buttonItemHidden}`}
-            >
-              <button
-                type="button"
-                onClick={handleToggle}
-                className={styles.button}
-                aria-label="close menu"
-              >
-                <Svg name="close" className={styles.buttonSvg} />
-              </button>
-            </li>
+            {hasAnchors && (
+              <>
+                <li
+                  className={styles.buttonItem}
+                >
+                  <button
+                    type="button"
+                    onClick={handleToggle}
+                    className={styles.button}
+                    aria-label="toggle menu"
+                  >
+                    {isSideShowing ? (
+                      <Svg name="close" className={styles.buttonSvg} />
+                    ) : (
+                      <Svg name="menu" className={styles.buttonSvg} />
+                    )}
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
+        {hasAnchors && (
+          <SideNav
+            anchors={anchors}
+            isSideShowing={isSideShowing}
+          />
+        )}
       </header>
-      {anchors && (
-        <SideNav
-          anchors={anchors}
-          isSideShowing={isSideShowing}
-          setIsSideShowing={setIsSideShowing}
-        />
-      )}
     </>
   );
 }

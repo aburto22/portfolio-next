@@ -47,15 +47,11 @@
 
 .darkToggleContainer {
   margin-left: auto;
-  display: hidden;
+  display: none;
 }
 
 .buttonItem {
   margin-left: auto;
-}
-
-.buttonItemHidden {
-  display: none;
 }
 
 .button {
@@ -63,12 +59,12 @@
   border-radius: 0.25rem;
 }
 
-.openButtonSvg {
+.buttonSvg {
   height: 2rem;
   width: 2rem;
 }
 
-@media screen and (min-width: $screen-sm) {
+@media screen and (min-width: $screen-md) {
   .darkToggleContainer {
     display: flex;
     justify-content: center;
@@ -76,6 +72,6 @@
   }
 
   .buttonItem {
-    display: hidden;
+    display: none;
   }
 }
