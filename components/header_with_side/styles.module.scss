@@ -48,6 +48,12 @@
 .darkToggleContainer {
   margin-left: auto;
   display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.showDarkToggle {
+  display: flex;
 }
 
 .buttonItem {
@@ -67,8 +73,6 @@
 @media screen and (min-width: $screen-md) {
   .darkToggleContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .buttonItem {

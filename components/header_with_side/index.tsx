@@ -57,7 +57,7 @@ const HeaderWithSide = ({ anchors }: HeaderSimpleProps) => {
                 </a>
               </Link>
             </li>
-            <li className={styles.darkToggleContainer}>
+            <li className={`${styles.darkToggleContainer} && ${!hasAnchors && styles.showDarkToggle}`}>
               <DarkToggle />
             </li>
             {hasAnchors && (

@@ -1,5 +1,9 @@
 @import '../../styles/variables.scss';
 
+.asidePlaceholder {
+  display: none;
+}
+
 .footer {
   border-top: 1px solid $gray-200;
   background-color: $gray-light;
@@ -62,7 +66,10 @@
 }
 
 @media screen and (min-width: $screen-md) {
-  .footerSidebar {
-    margin-left: $width-side-nav;
+  .asidePlaceholder {
+    width: $width-side-nav;
+    display: block;
+    float: left;
+    height: 1rem;
   }
 }
