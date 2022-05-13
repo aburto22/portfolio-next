@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
+> A place where I can show you what I am up to, and tell you a bit about myself.
+>
+> This website is hosted in vercel: [_Click here to take a look._](https://portfolio-aburto22.vercel.app/)
 
-## Getting Started
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Project Status](#project-status)
+* [New features](#new-features)
+* [Authors](#authors)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## General Information
+### Context
+Indispensable for every developer, I created this portfolio early and keep updating it to make it better and adding more and more projects.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Idea
+Goes without saying. A place where I can showcase my work, give contact details, and tell a little bit about myself.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
+### Front-end
+- TypeScript
+- Next.js
+- Redux
+- CSS Modules
+- EmailJS (to implement contact form)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Deployment and hosting
+- Vercel hosting
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Features
+My portfolio consists of a main page showing my main projects, technologies I work with and contact details. There are also more detailed pages:
+- About me page with the story about how I became a Full-Stack JavaScript developer.
+- Projects page showing all projects and apps I created.
+- Email sending to personal account when users use contact form.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
+<img src="./screenshots/mobile.png" width="100">
+<img src="./screenshots/tablet.png" width="200">
+<img src="./screenshots/laptop.png" width="600">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Setup
+Classic create-react-app project. Go into client folder and install dependencies using `npm install`, and then run the development server using `npm start`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+In order to run a local copy, users need to include an .env file in the server folder with the following information:
+- REACT_APP_EMAILJS_SERVICE_ID - Service ID for EmailJS
+- REACT_APP_EMAILJS_TEMPLATE_ID - Template ID for email for EmailJS 
+- REACT_APP_EMAILJS_USER_ID - User ID form EmailJS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Project Status
+A portfolio is always ongoing. There are always things to improve and new projects to add.
+
+
+## New features and bugs
+Known bugs:
+- In very rare cases, a project tile won't return to its normal status (showing project screenshot) after stop hovering.
+
+Future features:
+- Convert to JAM stack using Contentful.
+
+
+## Authors
+My portfolio created by myself:
+- Alejandro Aburto Salazar - [GitHub](https://github.com/aburto22)

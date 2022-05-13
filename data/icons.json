@@ -28,6 +28,13 @@
     "filter": true
   },
   {
+    "name": "Next.JS",
+    "icon": "next",
+    "alt": "next.js icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
     "name": "d3.JS",
     "icon": "d3",
     "alt": "d3 icon",
@@ -70,6 +77,13 @@
     "filter": true
   },
   {
+    "name": "CSS Modules",
+    "icon": "css-modules",
+    "alt": "css modules icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
     "name": "Bootstrap",
     "icon": "bootstrap",
     "alt": "bootstrap icon",
@@ -88,14 +102,14 @@
     "icon": "mongo",
     "alt": "mongo db icon",
     "category": "back-end",
-    "filter": false
+    "filter": true
   },
   {
     "name": "PostgreSQL",
     "icon": "postgresql",
     "alt": "postgresql icon",
     "category": "back-end",
-    "filter": false
+    "filter": true
   },
   {
     "name": "Passport.JS",
@@ -130,14 +144,21 @@
     "icon": "docker",
     "alt": "docker icon",
     "category": "general",
-    "filter": false
+    "filter": true
   },
   {
     "name": "Heroku",
     "icon": "heroku",
     "alt": "heroku icon",
     "category": "general",
-    "filter": false
+    "filter": true
+  },
+  {
+    "name": "Vercel",
+    "icon": "vercel",
+    "alt": "vercel icon",
+    "category": "general",
+    "filter": true
   },
   {
     "name": "Git",

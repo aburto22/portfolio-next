@@ -1,17 +1,34 @@
 [
   {
+    "name": "My Portfolio",
+    "img": "portfolio.png",
+    "description": "This. Where I can display and showcase what I build.",
+    "technologies": [
+      "typescript",
+      "next",
+      "react",
+      "redux",
+      "vercel",
+      "css-modules",
+      "vercel"
+    ],
+    "link": "https://travel-buddy-cn.herokuapp.com/",
+    "github": "https://github.com/qatta93/travel_buddy",
+    "category": "main"
+  },
+  {
     "name": "Travel Buddy",
     "img": "travel-buddy.png",
     "description": "Share trips and experiences, and find your next travel buddy",
     "technologies": [
+      "typescript",
       "react",
       "redux",
       "docker",
       "node",
-      "typescript",
-      "heroku",
       "postgresql",
-      "passport"
+      "passport",
+      "heroku"
     ],
     "link": "https://travel-buddy-cn.herokuapp.com/",
     "github": "https://github.com/qatta93/travel_buddy",
@@ -41,7 +58,7 @@
     "img": "hat-me-now.png",
     "description":
       "Fictitious E-Commerce website to sell hats. Users can create an account and pass orders.",
-    "technologies": ["react", "tailwind", "firebase"],
+    "technologies": ["react", "tailwind", "firebase", "vercel"],
     "link": "https://hat-me-now.vercel.app/",
     "github": "https://github.com/aburto22/hat-me-now",
     "category": "main"
