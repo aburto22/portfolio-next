@@ -21,7 +21,6 @@ const sendEmail = async (
 
     return { status: 'success' };
   } catch (err) {
-    console.error(err);
     return { status: 'error' };
   }
 };

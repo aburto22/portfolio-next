@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useAppSelector } from '../../../hooks/use_redux';
 import styles from './styles.module.scss';
 
@@ -30,13 +32,12 @@ const TextArea = ({
       htmlFor={name}
       className={`${styles.label} ${fieldValid ? styles.labelValid : fieldLabelInvalid}`}
     >
-      <button
+      <p
         className={`${styles.labelText} ${field.length === 0 && styles.labelTextContent}`}
         onClick={handleClick}
-        type="button"
       >
         {text}
-      </button>
+      </p>
       <textarea
         name={name}
         value={field}

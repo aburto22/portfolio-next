@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useAppSelector } from '../../../hooks/use_redux';
 import styles from './styles.module.scss';
 
@@ -16,9 +18,9 @@ const Input = ({
 
   const type = field === 'email' ? 'email' : 'text';
 
-  const handleClick = (event: React.MouseEvent) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const nextElementSibling = event.currentTarget.nextElementSibling as HTMLElement;
-    nextElementSibling.focus();
+    nextElementSibling?.focus();
   };
 
   const invalidField = field.length > 0
@@ -30,13 +32,12 @@ const Input = ({
       htmlFor={name}
       className={`${styles.label} ${fieldValid ? styles.labelValid : invalidField}`}
     >
-      <button
+      <p
         className={`${styles.labelText} ${field.length === 0 && styles.labelTextContent}`}
         onClick={handleClick}
-        type="button"
       >
         {text}
-      </button>
+      </p>
       <input
         type={type}
         name={name}
