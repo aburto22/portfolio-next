@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import emailjs, { init } from 'emailjs-com';
 import { useAppSelector } from '../../../hooks/use_redux';
 import Input from '../input';
 import TextArea from '../text_area';
+import sendEmail from '../../../lib/email';
 import styles from './styles.module.scss';
 
 const Form = () => {
@@ -17,37 +17,26 @@ const Form = () => {
 
   const darkTheme = useAppSelector((state) => state.darkTheme);
 
-  init(process.env.REACT_APP_EMAILJS_USER_ID || '');
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const params = {
-      from_name: name,
-      from_email: email,
-      message,
-    };
+    const json = await sendEmail(name, email, message);
 
-    emailjs
-      .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '',
-        params,
-      )
-      .then(() => {
-        setEmail('');
-        setMessage('');
-        setName('');
-        setNotice({ message: 'Your message has been sent.', code: 'success' });
-        setIsMessageSent(true);
-      })
-      .catch(() => setNotice({
+    if (json.status === 'error') {
+      setNotice({
         message: 'There was an error with your message. Please try again.',
         code: 'error',
-      }));
+      });
+      return;
+    }
+    setNotice({ message: 'Your message has been sent.', code: 'success' });
+    setName('');
+    setEmail('');
+    setMessage('');
+    setIsMessageSent(true);
   };
 
-  const noticeStyle = notice.code === 'error' ? styles.messageError : styles.messageCorrect;
+  const messageStyle = notice.code === 'error' ? styles.messageError : styles.messageCorrect;
 
   const messageValid = message.length > 10;
   const emailValid = email.length > 0 && email.includes('@') && email.includes('.');
@@ -64,7 +53,7 @@ const Form = () => {
         Do you want to say hi?
       </h2>
       <p
-        className={`${message} ${notice.code.length > 0 && noticeStyle}`}
+        className={`${styles.message} ${notice.code.length > 0 && messageStyle}`}
       >
         {notice.message}
       </p>

@@ -36,13 +36,13 @@
 .message {
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: bold;
   height: 0.5rem;
   text-align: center;
   overflow-wrap: normal;
   word-break: normal;
-  width: 14rem;
+  width: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .messageCorrect {
