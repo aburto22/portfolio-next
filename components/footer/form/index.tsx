@@ -19,7 +19,7 @@ const Form = () => {
 
   init(process.env.REACT_APP_EMAILJS_USER_ID || '');
 
-  function handleSubmit(e: React.FormEvent) {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const params = {

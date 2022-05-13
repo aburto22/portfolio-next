@@ -6,9 +6,11 @@ interface TextProps {
   children: React.ReactNode;
 }
 
-export default function Text({ children }: TextProps) {
+const Text = ({ children }: TextProps) => {
   return <p className={styles.text}>{children}</p>;
 }
+
+export default Text;
 
 Text.defaultProps = {
   children: null,

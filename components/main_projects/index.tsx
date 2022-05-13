@@ -8,7 +8,7 @@ import Text from '../text';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
 import styles from './styles.module.scss';
 
-export default function Projects() {
+const Projects = () => {
   const [darkTheme] = useContext(ThemeContext);
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
@@ -52,3 +52,5 @@ export default function Projects() {
     </section>
   );
 }
+
+export default Projects;

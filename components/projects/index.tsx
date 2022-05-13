@@ -8,7 +8,7 @@ import ProjectCard from '../project_card';
 import styles from './styles.module.scss'
 import { IProject } from '../../types';
 
-export default function About() {
+const About = () => {
   const [filter, setFilter] = useState('');
   const [darkTheme] = useContext(ThemeContext);
 
@@ -37,3 +37,5 @@ export default function About() {
     </section>
   );
 }
+
+export default About;

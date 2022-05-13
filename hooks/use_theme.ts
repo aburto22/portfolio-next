@@ -7,7 +7,7 @@ const checkSystemPreferenceAndSetTheme = (setDarkTheme: React.Dispatch<React.Set
   setDarkTheme(false);
 }
 
-export default function useDarkTheme(): [boolean | undefined, React.Dispatch<React.SetStateAction<boolean | undefined>>] {
+const useDarkTheme = (): [boolean | undefined, React.Dispatch<React.SetStateAction<boolean | undefined>>] => {
   const [darkTheme, setDarkTheme] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
@@ -24,3 +24,5 @@ export default function useDarkTheme(): [boolean | undefined, React.Dispatch<Rea
 
   return [darkTheme, setDarkTheme];
 }
+
+export default useDarkTheme;

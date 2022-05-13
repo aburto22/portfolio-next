@@ -7,8 +7,9 @@ import BackHomeArrow from '../back_home_arrow';
 import styles from './styles.module.scss';
 import aboutImage from '../../public/images/about-me/about-me.jpg';
 import styleUtils from '../../styles/utils.module.scss';
+import AboutMePage from '../../pages/about-me';
 
-export default function About() {
+const About = () => {
   const [darkTheme] = useContext(ThemeContext);
   
   return (
@@ -166,3 +167,5 @@ export default function About() {
     </>
   );
 }
+
+export default About;
