@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 import { IAnchor } from '../../types';
 
 interface HeaderSimpleProps {
-  anchors: IAnchor[]
+  anchors?: IAnchor[]
 }
 
 const HeaderWithSide = ({ anchors = [] }: HeaderSimpleProps) => {
@@ -91,3 +91,7 @@ const HeaderWithSide = ({ anchors = [] }: HeaderSimpleProps) => {
 };
 
 export default HeaderWithSide;
+
+HeaderWithSide.defaultProps = {
+  anchors: [],
+};
