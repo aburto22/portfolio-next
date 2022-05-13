@@ -7,7 +7,7 @@ interface ScrollButtonProps {
   children: React.ReactNode;
 }
 
-const ScrollButton = ({ target, className, children }: ScrollButtonProps) => {
+const ScrollButton = ({ target, className = '', children }: ScrollButtonProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
   const { activateScrollingDelay } = useContext(ScrollContext);
 
@@ -24,17 +24,13 @@ const ScrollButton = ({ target, className, children }: ScrollButtonProps) => {
 
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
     activateScrollingDelay();
-  }
+  };
 
   return (
     <button type="button" className={className} onClick={handleClick}>
       {children}
     </button>
   );
-}
+};
 
 export default ScrollButton;
-
-ScrollButton.defaultProps = {
-  className: "",
-};

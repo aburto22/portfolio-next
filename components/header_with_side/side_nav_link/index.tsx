@@ -23,7 +23,7 @@ const SideNavLink = ({ name, target }: SideNavLinkProps) => {
     }
 
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  };
 
   return (
     <li className={`${styles.linkItem} ${darkTheme && styles.linkItemDark}`}>
@@ -36,6 +36,6 @@ const SideNavLink = ({ name, target }: SideNavLinkProps) => {
       </a>
     </li>
   );
-}
+};
 
 export default SideNavLink;

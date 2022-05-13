@@ -1,8 +1,7 @@
-
 import React, { useContext } from 'react';
-import ThemeContext from '../../context/theme_context';
-import { IIcon } from '../../types'; 
 import Image from 'next/image';
+import ThemeContext from '../../context/theme_context';
+import { IIcon } from '../../types';
 import styles from './styles.module.scss';
 
 interface TechIconProps {
@@ -10,7 +9,7 @@ interface TechIconProps {
   tooltip: boolean;
 }
 
-const TechIcon = ({ icon, tooltip }: TechIconProps) => {
+const TechIcon = ({ icon, tooltip = false }: TechIconProps) => {
   const [darkTheme] = useContext(ThemeContext);
   return (
     <div className={`${styles.techIcon} ${darkTheme && styles.techIconDark}`}>
@@ -27,10 +26,6 @@ const TechIcon = ({ icon, tooltip }: TechIconProps) => {
       />
     </div>
   );
-}
+};
 
 export default TechIcon;
-
-TechIcon.defaultProps = {
-  tooltip: false,
-};

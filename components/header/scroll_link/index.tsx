@@ -25,12 +25,12 @@ const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
 
     event.preventDefault();
     activateScrollingDelay();
-    anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     if (setIsNavShowing) {
       setIsNavShowing(false);
     }
-  }
+  };
 
   return (
     <li className={styles.linkItem}>
@@ -44,10 +44,6 @@ const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
       </a>
     </li>
   );
-}
-
-ScrollLink.defaultProps = {
-  setIsNavShowing: undefined,
 };
 
 export default ScrollLink;

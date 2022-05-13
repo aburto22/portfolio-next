@@ -19,7 +19,10 @@ const Welcome = () => {
         <h1
           className={`${styles.title} ${isShowing && styles.showing}`}
         >
-          Hi, I am Alejandro <span className={styles.titleHand}>👋</span>,
+          Hi, I am Alejandro
+          {' '}
+          <span className={styles.titleHand}>👋</span>
+          ,
         </h1>
         <p
           className={`${styles.subTitle} ${isShowing && styles.showing}`}
@@ -49,6 +52,6 @@ const Welcome = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Welcome;

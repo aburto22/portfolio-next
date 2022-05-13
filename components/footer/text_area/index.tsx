@@ -10,31 +10,34 @@ interface TextAreaProps {
   fieldValid: boolean;
 }
 
-const TextArea = ({ field, setField, name, text, fieldValid }: TextAreaProps) => {
+const TextArea = ({
+  field, setField, name, text, fieldValid,
+}: TextAreaProps) => {
   const [darkTheme] = useContext(ThemeContext);
 
   const handleClick = (event: React.MouseEvent) => {
     const nextElementSibling = event.currentTarget.nextElementSibling as HTMLElement;
-    nextElementSibling.focus()
+    nextElementSibling.focus();
   };
 
-  const fieldLabelInvalid =
-    field.length > 0 ? styles.labelInvalid : styles.labelInvalidContent;
+  const fieldLabelInvalid = field.length > 0 ? styles.labelInvalid : styles.labelInvalidContent;
 
-  const fieldTextAreaInvalid =
-    field.length > 0 ? styles.textAreaInvalid : styles.textAreaInvalidContent;
+  const fieldTextAreaInvalid = field.length > 0
+    ? styles.textAreaInvalid
+    : styles.textAreaInvalidContent;
 
   return (
     <label
       htmlFor={name}
       className={`${styles.label} ${fieldValid ? styles.labelValid : fieldLabelInvalid}`}
     >
-      <p
+      <button
         className={`${styles.labelText} ${field.length === 0 && styles.labelTextContent}`}
         onClick={handleClick}
+        type="button"
       >
         {text}
-      </p>
+      </button>
       <textarea
         name={name}
         value={field}
@@ -45,6 +48,6 @@ const TextArea = ({ field, setField, name, text, fieldValid }: TextAreaProps) =>
       />
     </label>
   );
-}
+};
 
 export default TextArea;

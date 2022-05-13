@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
-import ThemeContext from '../../../context/theme_context';
 import Image from 'next/image';
+import ThemeContext from '../../../context/theme_context';
 import ICONS from '../../../data/icons.json';
 import styles from './styles.module.scss';
-import { IIcon } from '../../../types';
 
 interface IconsFilterProps {
   filter: string;
@@ -19,7 +18,7 @@ const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
     } else {
       setFilter(iconName);
     }
-  }
+  };
 
   const FilterComponents = ICONS
     .filter((icon) => icon.filter)
@@ -44,7 +43,8 @@ const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
   return (
     <ul className={styles.filterList}>
       {FilterComponents}
-    </ul>);
-}
+    </ul>
+  );
+};
 
 export default IconsFilter;

@@ -14,9 +14,9 @@ const Header = () => {
   const handleHome = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
-  }
+  };
 
   return (
     <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
@@ -79,6 +79,6 @@ const Header = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

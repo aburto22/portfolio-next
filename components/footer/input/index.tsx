@@ -10,32 +10,34 @@ interface InputProps {
   fieldValid: boolean;
 }
 
-const Input = ({ field, setField, name, text, fieldValid }: InputProps) => {
+const Input = ({
+  field, setField, name, text, fieldValid,
+}: InputProps) => {
   const [darkTheme] = useContext(ThemeContext);
-  
+
   const type = field === 'email' ? 'email' : 'text';
 
   const handleClick = (event: React.MouseEvent) => {
     const nextElementSibling = event.currentTarget.nextElementSibling as HTMLElement;
-    nextElementSibling.focus()
+    nextElementSibling.focus();
   };
 
-  const invalidField =
-    field.length > 0
-      ? styles.labelInvalid
-      : styles.labelInvalidContent;
+  const invalidField = field.length > 0
+    ? styles.labelInvalid
+    : styles.labelInvalidContent;
 
   return (
     <label
       htmlFor={name}
       className={`${styles.label} ${fieldValid ? styles.labelValid : invalidField}`}
     >
-      <p
+      <button
         className={`${styles.labelText} ${field.length === 0 && styles.labelTextContent}`}
         onClick={handleClick}
+        type="button"
       >
         {text}
-      </p>
+      </button>
       <input
         type={type}
         name={name}
@@ -46,6 +48,6 @@ const Input = ({ field, setField, name, text, fieldValid }: InputProps) => {
       />
     </label>
   );
-}
+};
 
 export default Input;

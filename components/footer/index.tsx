@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import Svg from "../svg/";
-import Form from "./form";
-import ThemeContext from "../../context/theme_context";
+import Svg from '../svg';
+import Form from './form';
+import ThemeContext from '../../context/theme_context';
 import styles from './styles.module.scss';
 import styleUtils from '../../styles/utils.module.scss';
 
@@ -9,7 +9,7 @@ interface FooterProps {
   sidebar: boolean;
 }
 
-const Footer = ({ sidebar }: FooterProps) => {
+const Footer = ({ sidebar = false }: FooterProps) => {
   const [darkTheme] = useContext(ThemeContext);
 
   return (
@@ -63,10 +63,6 @@ const Footer = ({ sidebar }: FooterProps) => {
       </footer>
     </>
   );
-}
+};
 
 export default Footer;
-
-Footer.defaultProps = {
-  sidebar: false,
-};

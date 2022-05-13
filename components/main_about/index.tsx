@@ -16,7 +16,7 @@ const MainAbout = () => {
   const [darkTheme] = useContext(ThemeContext);
 
   const createIcon = (icon: IIcon, i: number) => {
-    let transitionDelay = `${i * 100}ms`;
+    const transitionDelay = `${i * 100}ms`;
 
     let isShowing: boolean;
     if (icon.category === 'front-end') {
@@ -31,7 +31,7 @@ const MainAbout = () => {
       <li
         key={icon.name}
         className={`${styles.iconItem} ${isShowing && styles.showing}`}
-        style={{transitionDelay}}
+        style={{ transitionDelay }}
       >
         <TechIcon icon={icon} tooltip />
       </li>
@@ -39,15 +39,15 @@ const MainAbout = () => {
   };
 
   const IconsFrontEndComponents = ICONS.filter(
-    (icon) => icon.category === 'front-end'
+    (icon) => icon.category === 'front-end',
   ).map(createIcon);
 
   const IconsBackEndComponents = ICONS.filter(
-    (icon) => icon.category === 'back-end'
+    (icon) => icon.category === 'back-end',
   ).map(createIcon);
 
   const IconsGeneralComponents = ICONS.filter(
-    (icon) => icon.category === 'general'
+    (icon) => icon.category === 'general',
   ).map(createIcon);
 
   return (
@@ -95,6 +95,6 @@ const MainAbout = () => {
       </div>
     </section>
   );
-}
+};
 
 export default MainAbout;

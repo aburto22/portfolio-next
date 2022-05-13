@@ -7,7 +7,7 @@ interface SvgProps {
   stroke?: number;
 }
 
-const Svg = ({ name, className, stroke }: SvgProps) => {
+const Svg = ({ name, className = styles.svg, stroke = 1 }: SvgProps) => {
   if (name === 'close') {
     return (
       <svg
@@ -24,7 +24,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
           d="M6 18L18 6M6 6l12 12"
         />
       </svg>
-    )
+    );
   }
 
   if (name === 'menu') {
@@ -43,7 +43,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
           d="M4 6h16M4 12h16M4 18h16"
         />
       </svg>
-    )
+    );
   }
 
   if (name === 'mail') {
@@ -57,7 +57,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
         <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
       </svg>
-    )
+    );
   }
 
   if (name === 'check') {
@@ -74,7 +74,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
           clipRule="evenodd"
         />
       </svg>
-    )
+    );
   }
 
   if (name === 'arrowRight') {
@@ -110,7 +110,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
           d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
         />
       </svg>
-    )
+    );
   }
 
   if (name === 'github') {
@@ -184,7 +184,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
       >
         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
       </svg>
-    )
+    );
   }
 
   if (name === 'sun') {
@@ -222,7 +222,7 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
           d="M13 5l7 7-7 7M5 5l7 7-7 7"
         />
       </svg>
-    )
+    );
   }
 
   if (name === 'double_arrow_left') {
@@ -245,11 +245,11 @@ const Svg = ({ name, className, stroke }: SvgProps) => {
   }
 
   return null;
-}
-
-Svg.defaultProps = {
-  className: styles.svg,
-  stroke: 1,
 };
 
 export default Svg;
+
+Svg.defaultProps = {
+  stroke: 1,
+  className: styles.svg,
+};

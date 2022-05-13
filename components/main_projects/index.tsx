@@ -13,7 +13,7 @@ const Projects = () => {
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
   const MainProjectsComponent = PROJECTS.filter(
-    (project) => project.category === 'main'
+    (project) => project.category === 'main',
   ).map((project) => (
     <ProjectCard
       key={project.name}
@@ -32,7 +32,8 @@ const Projects = () => {
           ref={ref}
         >
           <Text>
-            A list of my most relevant projects. If you want to see more,{" "}
+            A list of my most relevant projects. If you want to see more,
+            {' '}
             <Link href={ROUTES.allProjects}>
               <a
                 className={`${styles.link} ${darkTheme && styles.linkDark}`}
@@ -51,6 +52,6 @@ const Projects = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Projects;

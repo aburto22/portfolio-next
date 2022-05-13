@@ -32,6 +32,6 @@ const SideNav = ({ anchors, isSideShowing }: SideNavProps) => {
       </div>
     </aside>
   );
-}
+};
 
 export default SideNav;

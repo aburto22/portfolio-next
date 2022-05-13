@@ -1,22 +1,21 @@
-import { useEffect } from 'react';
-import '../styles/globals.scss'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
 import useTheme from '../hooks/use_theme';
 import ScrollContext from '../context/scroll_context';
 import ThemeContext from '../context/theme_context';
 import useScroll from '../hooks/use_scroll';
+import '../styles/globals.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const { isScrolling, activateScrollingDelay } = useScroll();
+  const scrollValue = useScroll();
   const themeValue = useTheme();
 
   return (
-    <ScrollContext.Provider value={{ isScrolling, activateScrollingDelay }}>
+    <ScrollContext.Provider value={scrollValue}>
       <ThemeContext.Provider value={themeValue}>
         <Component {...pageProps} />
       </ThemeContext.Provider>
     </ScrollContext.Provider>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

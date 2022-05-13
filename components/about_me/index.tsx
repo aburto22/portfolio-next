@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
-import ThemeContext from '../../context/theme_context';
 import Image from 'next/image';
+import ThemeContext from '../../context/theme_context';
 import SubHeading from '../sub_heading';
 import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
 import styles from './styles.module.scss';
 import aboutImage from '../../public/images/about-me/about-me.jpg';
 import styleUtils from '../../styles/utils.module.scss';
-import AboutMePage from '../../pages/about-me';
 
-const About = () => {
+const AboutMe = () => {
   const [darkTheme] = useContext(ThemeContext);
-  
+
   return (
     <>
       <div className={styleUtils.asidePlaceholder} />
@@ -166,6 +165,6 @@ const About = () => {
       </section>
     </>
   );
-}
+};
 
-export default About;
+export default AboutMe;

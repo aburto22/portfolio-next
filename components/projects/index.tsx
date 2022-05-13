@@ -5,16 +5,16 @@ import BackHomeArrow from '../back_home_arrow';
 import IconsFilter from './icons_filter';
 import PROJECTS from '../../data/projects.json';
 import ProjectCard from '../project_card';
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 import { IProject } from '../../types';
 
 const About = () => {
   const [filter, setFilter] = useState('');
   const [darkTheme] = useContext(ThemeContext);
 
-  const ProjectList = PROJECTS.filter((project: IProject) =>
-    filter ? project.technologies.includes(filter) : true
-  ).map((project) => <ProjectCard key={project.name} project={project} />);
+  const ProjectList = PROJECTS
+    .filter((project: IProject) => (filter ? project.technologies.includes(filter) : true))
+    .map((project) => <ProjectCard key={project.name} project={project} />);
 
   return (
     <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
@@ -36,6 +36,6 @@ const About = () => {
       <BackHomeArrow />
     </section>
   );
-}
+};
 
 export default About;

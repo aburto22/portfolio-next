@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
+import Link from 'next/link';
 import ThemeContext from '../../context/theme_context';
-import Link from 'next/link'
 import Svg from '../svg';
 import ROUTES from '../../data/routes.json';
 import styles from './styles.module.scss';
@@ -19,6 +19,6 @@ const BackHomeArrow = () => {
       <hr className={`${styles.line} ${darkTheme && styles.lineDark}`} />
     </div>
   );
-}
+};
 
 export default BackHomeArrow;

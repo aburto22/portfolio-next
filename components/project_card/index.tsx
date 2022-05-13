@@ -1,26 +1,26 @@
 import React, { useContext } from 'react';
+import Image from 'next/image';
 import ThemeContext from '../../context/theme_context';
 import ICONS from '../../data/icons.json';
-import Image from 'next/image';
 import TechIcon from '../tech_icon';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
 import { IProject } from '../../types';
 import styles from './styles.module.scss';
-import styleUtils from '../../styles/utils.module.scss'
+import styleUtils from '../../styles/utils.module.scss';
 
 interface ProjectCardProps {
   project: IProject;
   size: string;
 }
 
-const ProjectCard = ({ project, size }: ProjectCardProps) => {
-  const { name, img, description, page, technologies, link, github } = project;
+const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) => {
+  const {
+    name, img, description, technologies, link, github,
+  } = project;
   const [ref, isShowing] = useElementOnScreen<HTMLLIElement>();
   const [darkTheme] = useContext(ThemeContext);
 
-  const IconComponents = ICONS.filter((icon) =>
-    technologies.includes(icon.icon)
-  ).map((icon) => (
+  const IconComponents = ICONS.filter((icon) => technologies.includes(icon.icon)).map((icon) => (
     <li key={icon.name} className={styles.iconItem}>
       <TechIcon icon={icon} tooltip />
     </li>
@@ -32,12 +32,12 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
       ref={ref}
     >
       <h2 className={styles.title}>{name}</h2>
-        <Image
-          src={`/images/projects/${img}`}
-          alt={description}
-          width={1536}
-          height={2048}
-        />
+      <Image
+        src={`/images/projects/${img}`}
+        alt={description}
+        width={1536}
+        height={2048}
+      />
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a
           href={link}
@@ -66,10 +66,6 @@ const ProjectCard = ({ project, size }: ProjectCardProps) => {
       </div>
     </li>
   );
-}
+};
 
 export default ProjectCard;
-
-ProjectCard.defaultProps = {
-  size: styles.defaultSize,
-};

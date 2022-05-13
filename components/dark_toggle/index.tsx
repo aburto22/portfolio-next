@@ -13,7 +13,7 @@ const DarkToggle = () => {
     }
     localStorage.theme = 'dark';
     return setDarkTheme(true);
-  }
+  };
 
   return (
     <button
@@ -31,6 +31,6 @@ const DarkToggle = () => {
       </div>
     </button>
   );
-}
+};
 
 export default DarkToggle;

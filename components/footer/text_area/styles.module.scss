@@ -17,8 +17,9 @@
 }
 
 .labelText {
+  display: block;
   height: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
   transition: all 500ms;
   user-select: none;
   font-size: 0.75rem;
