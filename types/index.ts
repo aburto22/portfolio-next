@@ -23,7 +23,6 @@ export interface IIcon {
   icon: string;
   alt: string;
   category: string;
-  filter: boolean;
 }
 
 export interface IAnchor {
