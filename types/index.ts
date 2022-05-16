@@ -1,11 +1,11 @@
 import store from '../store';
 
 interface IImage {
-  contentType: string;
-  height: number;
-  width: number;
+  contentType?: string;
+  height?: number;
+  width?: number;
   src: string;
-  name: string;
+  name?: string;
 }
 
 export interface IProject {
