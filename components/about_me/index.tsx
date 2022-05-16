@@ -22,6 +22,7 @@ const AboutMe = () => {
           <Image
             src={aboutImage}
             alt="Myself standing in a look-out point with our touring bikes and with mountains behind"
+            placeholder="blur"
             priority
           />
         </div>
