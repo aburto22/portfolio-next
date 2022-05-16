@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAppSelector } from '../../../hooks/use_redux';
 import Input from '../input';
 import TextArea from '../text_area';
+import Spinner from '../spinner';
 import sendEmail from '../../../lib/email';
 import styles from './styles.module.scss';
 
@@ -14,14 +15,17 @@ const Form = () => {
     message: '',
     code: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     const json = await sendEmail(name, email, message);
 
+    setLoading(false);
     if (json.status === 'error') {
       setNotice({
         message: 'There was an error with your message. Please try again.',
@@ -44,7 +48,7 @@ const Form = () => {
 
   const isBtnActive = isMessageSent
     ? false
-    : emailValid && messageValid && nameValid;
+    : emailValid && messageValid && nameValid && !loading;
 
   return (
     <div className={`focus-me ${styles.formContainer} ${darkTheme && styles.formContainerDark}`}>
@@ -87,7 +91,7 @@ const Form = () => {
           className={`${styles.submitButton} ${darkTheme && styles.submitButtonDark} ${!isBtnActive && styles.submitButtonInactive}`}
           disabled={!isBtnActive}
         >
-          Send
+          {loading ? <Spinner /> : 'Send'}
         </button>
       </form>
     </div>
