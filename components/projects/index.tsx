@@ -3,7 +3,6 @@ import { useAppSelector } from '../../hooks/use_redux';
 import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
 import IconsFilter from './icons_filter';
-// import PROJECTS from '../../data/projects.json';
 import ProjectCard from '../project_card';
 import styles from './styles.module.scss';
 import { IProject } from '../../types';

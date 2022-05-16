@@ -29,7 +29,7 @@ const MainAbout = () => {
     return (
       <li
         key={icon.name}
-        className={`${styles.iconItem} ${isShowing && styles.showing}`}
+        className={`${styles.iconItem} ${isShowing && styles.showingIcon}`}
         style={{ transitionDelay }}
       >
         <TechIcon icon={icon} tooltip />
