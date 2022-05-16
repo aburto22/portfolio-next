@@ -20,62 +20,54 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
-      <nav className={`${styles.nav} ${darkTheme && styles.navDark}`}>
-        <ul className={styles.navList}>
-          <li className={styles.logoItem}>
+      <nav className={styles.nav}>
+        <button
+          type="button"
+          onClick={handleHome}
+          className={styles.logoButton}
+        >
+          Alejandro Aburto S.
+        </button>
+        <ul
+          className={`${styles.navLinksContainer} ${isNavShowing && styles.navLinksContainerShowing} ${darkTheme && styles.navLinksContainerDark}`}
+        >
+          <li className={styles.closeButtonItem}>
             <button
               type="button"
-              onClick={handleHome}
-              className={styles.logoButton}
-            >
-              Alejandro Aburto S.
-            </button>
-          </li>
-          <li className={styles.navLinksItem}>
-            <ul
-              className={`${styles.navLinksContainer} ${isNavShowing && styles.navLinksContainerShowing} ${darkTheme && styles.navLinksContainerDark}`}
-            >
-              <li className={styles.closeButtonItem}>
-                <button
-                  type="button"
-                  className={styles.closeButton}
-                  onClick={handleToggle}
-                  aria-label="close menu"
-                >
-                  <Svg name="close" className={styles.closeButtonSvg} />
-                </button>
-              </li>
-              <ScrollLink
-                name="Projects"
-                target="projects"
-                setIsNavShowing={setIsNavShowing}
-              />
-              <ScrollLink
-                name="About Me"
-                target="about-me"
-                setIsNavShowing={setIsNavShowing}
-              />
-              <ScrollLink
-                name="Contact"
-                target="contact"
-                setIsNavShowing={setIsNavShowing}
-              />
-              <li className={styles.darkToggleItem}>
-                <DarkToggle />
-              </li>
-            </ul>
-          </li>
-          <li className={styles.openButtonItem}>
-            <button
-              type="button"
+              className={styles.closeButton}
               onClick={handleToggle}
-              className={styles.openButton}
-              aria-label="open menu"
+              aria-label="close menu"
             >
-              <Svg name="menu" className={styles.openButtonSvg} />
+              <Svg name="close" className={styles.closeButtonSvg} />
             </button>
+          </li>
+          <ScrollLink
+            name="Projects"
+            target="projects"
+            setIsNavShowing={setIsNavShowing}
+          />
+          <ScrollLink
+            name="About Me"
+            target="about-me"
+            setIsNavShowing={setIsNavShowing}
+          />
+          <ScrollLink
+            name="Contact"
+            target="contact"
+            setIsNavShowing={setIsNavShowing}
+          />
+          <li className={styles.darkToggleItem}>
+            <DarkToggle />
           </li>
         </ul>
+        <button
+          type="button"
+          onClick={handleToggle}
+          className={styles.openButton}
+          aria-label="open menu"
+        >
+          <Svg name="menu" className={styles.openButtonSvg} />
+        </button>
       </nav>
     </header>
   );

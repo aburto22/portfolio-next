@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { useAppSelector } from '../../../hooks/use_redux';
 import SideNavLink from '../side_nav_link';
 import DarkToggle from '../../dark_toggle';
@@ -11,7 +10,6 @@ interface SideNavProps {
 }
 
 const SideNav = ({ anchors, isSideShowing }: SideNavProps) => {
-  const navRef = useRef<HTMLElement>(null);
   const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const AnchorsComponent = anchors.map((anchor) => (
@@ -21,7 +19,6 @@ const SideNav = ({ anchors, isSideShowing }: SideNavProps) => {
   return (
     <aside
       className={`${styles.sideMenu} ${darkTheme && styles.sideMenuDark} ${isSideShowing && styles.sideMenuShowing}`}
-      ref={navRef}
     >
       <h2 className={`${styles.title} ${darkTheme && styles.titleDark}`}>
         Content

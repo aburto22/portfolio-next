@@ -6,23 +6,16 @@
   top: 0;
   z-index: 30;
   background-color: $light-white;
+  height: $height-header;
+  border-bottom: 1px solid $gray-200;
 }
 
 .headerDark {
   background-color: $gray-dark-bg;
-}
-
-.nav {
-  height: $height-header;
-  width: 100%;
-  border-bottom: 1px solid $gray-200;
-}
-
-.navDark {
   border-bottom: 1px solid $gray-primary;
 }
 
-.navList {
+.nav {
   max-width: $screen-lg;
   margin: 0 auto;
   display: flex;
@@ -30,10 +23,6 @@
   align-items: center;
   height: 100%;
   padding: 0 0.5rem;
-}
-
-.logoItem {
-  display: block;
 }
 
 .logoLink {
@@ -56,11 +45,8 @@
   display: flex;
 }
 
-.buttonItem {
-  margin-left: auto;
-}
-
 .button {
+  margin-left: auto;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
 }
@@ -75,7 +61,7 @@
     display: flex;
   }
 
-  .buttonItem {
+  .button {
     display: none;
   }
 }

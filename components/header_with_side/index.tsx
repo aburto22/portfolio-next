@@ -48,37 +48,29 @@ const HeaderWithSide = ({ anchors = [] }: HeaderSimpleProps) => {
 
   return (
     <header className={`${styles.header} ${darkTheme && styles.headerDark}`} ref={headerRef}>
-      <nav className={`${styles.nav} ${darkTheme && styles.navDark}`}>
-        <ul className={styles.navList}>
-          <li className={styles.logoItem}>
-            <Link href={ROUTES.home}>
-              <a className={styles.logoLink}>
-                Alejandro Aburto S.
-              </a>
-            </Link>
-          </li>
-          <li className={`${styles.darkToggleContainer} && ${!hasAnchors && styles.showDarkToggle}`}>
-            <DarkToggle />
-          </li>
-          {hasAnchors && (
-          <li
-            className={styles.buttonItem}
+      <nav className={styles.nav}>
+        <Link href={ROUTES.home}>
+          <a className={styles.logoLink}>
+            Alejandro Aburto S.
+          </a>
+        </Link>
+        <div className={`${styles.darkToggleContainer} && ${!hasAnchors && styles.showDarkToggle}`}>
+          <DarkToggle />
+        </div>
+        {hasAnchors && (
+          <button
+            type="button"
+            onClick={handleToggle}
+            className={styles.button}
+            aria-label="toggle menu"
           >
-            <button
-              type="button"
-              onClick={handleToggle}
-              className={styles.button}
-              aria-label="toggle menu"
-            >
-              {isSideShowing ? (
-                <Svg name="close" className={styles.buttonSvg} />
-              ) : (
-                <Svg name="menu" className={styles.buttonSvg} />
-              )}
-            </button>
-          </li>
-          )}
-        </ul>
+            {isSideShowing ? (
+              <Svg name="close" className={styles.buttonSvg} />
+            ) : (
+              <Svg name="menu" className={styles.buttonSvg} />
+            )}
+          </button>
+        )}
       </nav>
       {hasAnchors && (
       <SideNav
