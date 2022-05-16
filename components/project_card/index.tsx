@@ -34,8 +34,9 @@ const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) =
       <Image
         src={image.src}
         alt={description}
-        width={image.width || 1536}
-        height={image.height || 2048}
+        width={image.width || 375}
+        height={image.height || 500}
+        priority
       />
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a

@@ -12,10 +12,10 @@ export interface IProject {
   name: string;
   image: IImage;
   description: string;
-  page?: string;
   technologies: string[];
   liveUrl: string;
   githubUrl: string;
+  isMainProject: boolean;
 }
 
 export interface IIcon {

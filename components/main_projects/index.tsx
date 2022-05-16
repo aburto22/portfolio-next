@@ -1,25 +1,29 @@
 import Link from 'next/link';
 import { useAppSelector } from '../../hooks/use_redux';
 import ProjectCard from '../project_card';
-import PROJECTS from '../../data/projects.json';
 import ROUTES from '../../data/routes.json';
 import Text from '../text';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
+import { IProject } from '../../types';
 import styles from './styles.module.scss';
 
-const Projects = () => {
+interface ProjectsProps {
+  projects: IProject[];
+}
+
+const Projects = ({ projects }: ProjectsProps) => {
   const darkTheme = useAppSelector((state) => state.darkTheme);
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
-  const MainProjectsComponent = PROJECTS.filter(
-    (project) => project.category === 'main',
-  ).map((project) => (
-    <ProjectCard
-      key={project.name}
-      project={project}
-      size={styles.mainProjectSize}
-    />
-  ));
+  const MainProjectsComponent = projects
+    .filter((project) => project.isMainProject)
+    .map((project) => (
+      <ProjectCard
+        key={project.name}
+        project={project}
+        size={styles.mainProjectSize}
+      />
+    ));
 
   return (
     <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
