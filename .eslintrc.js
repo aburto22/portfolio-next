@@ -36,6 +36,7 @@ module.exports = {
     'react/jsx-props-no-spreading': [2, {
       exceptions: ['Component']
     }],
+    'import/prefer-default-export': 0,
   },
-  ignorePatterns: ['.eslintrc.js', 'node_modules', 'next.config.js']
+  ignorePatterns: ['.eslintrc.js', 'node_modules', 'next.config.js', 'getContentfulEnvironment.js', 'scripts']
 };

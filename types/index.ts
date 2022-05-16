@@ -1,13 +1,21 @@
 import store from '../store';
 
+interface IImage {
+  contentType?: string;
+  height?: number;
+  width?: number;
+  src: string;
+  name?: string;
+}
+
 export interface IProject {
   name: string;
-  img: string;
+  image: IImage;
   description: string;
-  page?: string;
   technologies: string[];
-  link: string;
-  github: string;
+  liveUrl: string;
+  githubUrl: string;
+  isMainProject: boolean;
 }
 
 export interface IIcon {

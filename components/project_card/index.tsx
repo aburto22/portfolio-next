@@ -14,7 +14,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) => {
   const {
-    name, img, description, technologies, link, github,
+    name, image, description, technologies, liveUrl, githubUrl,
   } = project;
   const [ref, isShowing] = useElementOnScreen<HTMLLIElement>();
   const darkTheme = useAppSelector((state) => state.darkTheme);
@@ -32,14 +32,15 @@ const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) =
     >
       <h2 className={styles.title}>{name}</h2>
       <Image
-        src={`/images/projects/${img}`}
+        src={image.src}
         alt={description}
-        width={1536}
-        height={2048}
+        width={image.width || 375}
+        height={image.height || 500}
+        priority
       />
       <div className={`${styles.projectContent} ${darkTheme && styles.projectContentDark}`}>
         <a
-          href={link}
+          href={liveUrl}
           className={styles.contentTitle}
           target="_blank"
           rel="noreferrer"
@@ -55,10 +56,10 @@ const ProjectCard = ({ project, size = styles.defaultSize }: ProjectCardProps) =
           {IconComponents}
         </ul>
         <div className={styles.contentButtonContainer}>
-          <a href={link} className={`${styleUtils.buttonPrimary} ${styles.buttonPrimaryLayout}`}>
+          <a href={liveUrl} className={`${styleUtils.buttonPrimary} ${styles.buttonPrimaryLayout}`}>
             Live
           </a>
-          <a href={github} className={`${styleUtils.buttonSecondary} ${styles.buttonSecondaryLayout}`}>
+          <a href={githubUrl} className={`${styleUtils.buttonSecondary} ${styles.buttonSecondaryLayout}`}>
             Repo
           </a>
         </div>

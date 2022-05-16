@@ -3,17 +3,21 @@ import { useAppSelector } from '../../hooks/use_redux';
 import Text from '../text';
 import BackHomeArrow from '../back_home_arrow';
 import IconsFilter from './icons_filter';
-import PROJECTS from '../../data/projects.json';
+// import PROJECTS from '../../data/projects.json';
 import ProjectCard from '../project_card';
 import styles from './styles.module.scss';
 import { IProject } from '../../types';
 
-const About = () => {
+interface ProjectsProps {
+  projects: IProject[];
+}
+
+const Projects = ({ projects }: ProjectsProps) => {
   const [filter, setFilter] = useState('');
   const darkTheme = useAppSelector((state) => state.darkTheme);
 
-  const ProjectList = PROJECTS
-    .filter((project: IProject) => (filter ? project.technologies.includes(filter) : true))
+  const ProjectList = projects
+    .filter((project) => (filter ? project.technologies.includes(filter) : true))
     .map((project) => <ProjectCard key={project.name} project={project} />);
 
   return (
@@ -38,4 +42,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Projects;
