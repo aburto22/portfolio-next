@@ -19,6 +19,11 @@ const Projects = ({ projects }: ProjectsProps) => {
     .filter((project) => (filter ? project.technologies.includes(filter) : true))
     .map((project) => <ProjectCard key={project.name} project={project} />);
 
+  const allProjectsIcons = projects
+    .map((p) => p.technologies)
+    .flat()
+    .filter((tech, i, arr) => arr.indexOf(tech) === i);
+
   return (
     <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
       <BackHomeArrow />
@@ -32,7 +37,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           </Text>
         </div>
         <div className={styles.filterContainer}>
-          <IconsFilter filter={filter} setFilter={setFilter} />
+          <IconsFilter filter={filter} setFilter={setFilter} icons={allProjectsIcons} />
         </div>
       </div>
       <ul className={styles.projectList}>{ProjectList}</ul>

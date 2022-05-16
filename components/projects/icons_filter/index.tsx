@@ -6,9 +6,10 @@ import styles from './styles.module.scss';
 interface IconsFilterProps {
   filter: string;
   setFilter: React.Dispatch<React.SetStateAction<string>>;
+  icons: string[];
 }
 
-const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
+const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
   const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleClick = (iconName: string) => {
@@ -20,7 +21,7 @@ const IconsFilter = ({ filter, setFilter }: IconsFilterProps) => {
   };
 
   const FilterComponents = ICONS
-    .filter((icon) => icon.filter)
+    .filter((icon) => icons.includes(icon.icon))
     .map((icon) => (
       <li key={icon.name}>
         <button
