@@ -38,5 +38,5 @@ module.exports = {
     }],
     'import/prefer-default-export': 0,
   },
-  ignorePatterns: ['.eslintrc.js', 'node_modules', 'next.config.js', 'getContentfulEnvironment.js']
+  ignorePatterns: ['.eslintrc.js', 'node_modules', 'next.config.js', 'getContentfulEnvironment.js', 'scripts']
 };

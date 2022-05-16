@@ -23,6 +23,7 @@ const TechIcon = ({ icon, tooltip = false }: TechIconProps) => {
         alt={icon.alt}
         height={72}
         width={72}
+        className={styles.icon}
       />
     </div>
   );

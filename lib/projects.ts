@@ -18,7 +18,7 @@ export const getProjects = async (): Promise<IProject[]> => {
       width: p.image.fields.file.details.image?.width || 0,
       height: p.image.fields.file.details.image?.height || 0,
       contentType: p.image.fields.file.contentType,
-      src: `https:${p.image.fields.file.url}`,
+      src: `https:${p.image.fields.file.url}?w=350`,
     };
 
     return {
