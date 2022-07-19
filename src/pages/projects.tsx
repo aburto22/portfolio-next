@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Layout from '../components/layout';
-import HeaderWithSide from '../components/header_with_side';
-import Projects from '../components/projects';
-import { IProject } from '../types';
-import { getProjects } from '../lib/projects';
+import Layout from '@components/layout';
+import HeaderWithSide from '@components/header_with_side';
+import Projects from '@components/projects';
+import { IProject } from '@types';
+import { getProjects } from '@lib/projects';
 
 interface ProjectsPageProps {
   projects: IProject[];
