@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useAppSelector } from '../../hooks/use_redux';
-import ROUTES from '../../data/routes.json';
+import ROUTES from '../../../data/routes.json';
 import DarkToggle from '../dark_toggle';
 import SideNav from './side_nav';
 import Svg from '../svg';

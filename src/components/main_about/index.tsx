@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useAppSelector } from '../../hooks/use_redux';
 import TechIcon from '../tech_icon';
-import ICONS from '../../data/icons.json';
+import ICONS from '../../../data/icons.json';
 import useElementOnScreen from '../../hooks/use_element_on_screen';
-import ROUTES from '../../data/routes.json';
+import ROUTES from '../../../data/routes.json';
 import styles from './styles.module.scss';
 import { IIcon } from '../../types';
 
