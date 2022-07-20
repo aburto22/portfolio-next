@@ -63,6 +63,13 @@
     "filter": true
   },
   {
+    "name": "Styled Components",
+    "icon": "styled-components",
+    "alt": "styled components icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
     "name": "Tailwind CSS",
     "icon": "tailwind",
     "alt": "tailwind css icon",
