@@ -57,6 +57,7 @@ export const ContentTitle = styled.a`
   margin: 0.5rem 0 auto;
   text-align: center;
   font-weight: bold;
+  color: ${({ theme }) => theme.colors.font};
 `;
 
 export const ContentLabel = styled.p`

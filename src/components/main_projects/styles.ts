@@ -1,80 +1,61 @@
 import { dimensions } from '@styles/variables';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const MainProjectSize = styled.div`
-  max-width: ${dimensions.widthMainProject};
-  max-height: ${dimensions.heightMainProject};
-`;
-
-.section {
+export const Section = styled.section`
   position: relative;
   padding: 2.5rem 0.5rem;
-  background-color: $gray-light;
+  background-color: ${({ theme }) => theme.colors.backgroundGray};
+`;
 
-}
-
-.sectionDark {
-  background-color: $gray-dark-bg-light;
-}
-
-.anchor {
+export const Anchor = styled.span`
   width: 0;
   height: 0;
   position: absolute;
   top: -5rem;
-}
+`;
 
-.container {
+export const Container = styled.div`
   height: 100%;
-  max-width: $screen-lg;
+  max-width: ${dimensions.screenLg};
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+`;
 
-.title {
+export const Title = styled.h1`
   font-size: 1.875rem;
   line-height: 2.25rem;
   margin-bottom: 2rem;
+`;
+
+interface ContentProps {
+  isShowing: boolean;
 }
 
-.content {
-  max-width: $screen-sm;
+export const Content = styled.div<ContentProps>`
+  max-width: ${dimensions.screenMd};
   margin: 0 auto;
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-bottom: 2rem;
-  opacity: 0;
+  opacity: ${({ isShowing }) => (isShowing ? 1 : 0)};
   transition: opacity 700ms;
-}
+`;
 
-.link {
-  color: $blue-link;
+export const Link = styled.a`
   text-decoration: underline;
-}
+`;
 
-.linkDark {
-  color: $blue-link-dark;
-}
-
-.link:hover {
-  color: $blue-hover
-}
-
-.projectContainer {
+export const ProjectContainer = styled.div`
   width: 100%;
-}
+`;
 
-.projectList {
+export const ProjectList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-}
-
-.showing {
-  opacity: 1;
-}
+`;

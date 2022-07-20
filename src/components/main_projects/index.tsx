@@ -1,18 +1,16 @@
 import Link from 'next/link';
-import { useAppSelector } from '@hooks/use_redux';
 import ProjectCard from '@components/project_card';
 import ROUTES from '@data/routes.json';
 import Text from '@components/text';
 import useElementOnScreen from '@hooks/use_element_on_screen';
-import { IProject } from '@types';
-import styles from './styles.module.scss';
+import type { IProject } from '@types';
+import * as styles from './styles';
 
 interface ProjectsProps {
   projects: IProject[];
 }
 
 const Projects = ({ projects }: ProjectsProps) => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
   const [ref, isShowing] = useElementOnScreen<HTMLDivElement>();
 
   const MainProjectsComponent = projects
@@ -21,39 +19,37 @@ const Projects = ({ projects }: ProjectsProps) => {
       <ProjectCard
         key={project.name}
         project={project}
-        size={styles.mainProjectSize}
+        isMain
       />
     ));
 
   return (
-    <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
-      <span id="projects" className={styles.anchor} />
-      <div className={styles.container}>
-        <h1 className={styles.title}>Projects</h1>
-        <div
-          className={`${styles.content} ${isShowing && styles.showing}`}
+    <styles.Section>
+      <styles.Anchor id="projects" />
+      <styles.Container>
+        <styles.Title>Projects</styles.Title>
+        <styles.Content
+          isShowing={isShowing}
           ref={ref}
         >
           <Text>
             A list of my most relevant projects. If you want to see more,
             {' '}
-            <Link href={ROUTES.allProjects}>
-              <a
-                className={`${styles.link} ${darkTheme && styles.linkDark}`}
-              >
+            <Link href={ROUTES.allProjects} passHref>
+              <styles.Link href="dummy">
                 click here to view all my projects
-              </a>
+              </styles.Link>
             </Link>
             .
           </Text>
-        </div>
-        <div className={styles.projectContainer}>
-          <ul className={styles.projectList}>
+        </styles.Content>
+        <styles.ProjectContainer>
+          <styles.ProjectList>
             {MainProjectsComponent}
-          </ul>
-        </div>
-      </div>
-    </section>
+          </styles.ProjectList>
+        </styles.ProjectContainer>
+      </styles.Container>
+    </styles.Section>
   );
 };
 

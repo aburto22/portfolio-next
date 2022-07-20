@@ -21,19 +21,21 @@ const LinkButton = styled.a`
 `;
 
 export const LinkButtonPrimaryBase = styled(LinkButton)`
-  @extend .button;
+  color: ${({ theme }) => theme.colors.font};
   background: ${({ theme }) => theme.gradients.blue};
 
   :hover {
+    color: ${({ theme }) => theme.colors.font};
     background: ${({ theme }) => theme.gradients.blueHover}
   }
 `;
 
 export const LinkButtonSecondaryBase = styled(LinkButton)`
-  @extend .button;
   background: ${({ theme }) => theme.gradients.gray};
+  color: ${({ theme }) => theme.colors.font};
 
   :hover {
+    color: ${({ theme }) => theme.colors.font};
     background: ${({ theme }) => theme.gradients.grayHover}
   }
 `;
