@@ -1,7 +1,5 @@
 import { useMemo } from 'react';
 import type { AppProps } from 'next/app';
-import { Provider } from 'react-redux';
-import store from '@store';
 import ScrollContext from '@context/scroll_context';
 import DarkThemeContext from '@context/dark_theme_context';
 import useScroll from '@hooks/use_scroll';
@@ -23,14 +21,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <ScrollContext.Provider value={scrollValue}>
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <DarkThemeContext.Provider value={darkThemeContextValue}>
-            <GlobalStyle />
-            <Component {...pageProps} />
-          </DarkThemeContext.Provider>
-        </ThemeProvider>
-      </Provider>
+      <ThemeProvider theme={theme}>
+        <DarkThemeContext.Provider value={darkThemeContextValue}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </DarkThemeContext.Provider>
+      </ThemeProvider>
     </ScrollContext.Provider>
   );
 };

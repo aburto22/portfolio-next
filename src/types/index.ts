@@ -1,4 +1,3 @@
-import store from '@store';
 import * as Contentful from 'contentful';
 
 interface IImage {
@@ -30,9 +29,6 @@ export interface IAnchor {
   name: string;
   target: string;
 }
-
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
 
 export interface TypeProjectInfoFields {
   name: Contentful.EntryFields.Symbol;
