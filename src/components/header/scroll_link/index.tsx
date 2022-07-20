@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useAppSelector } from '@hooks/use_redux';
 import ScrollContext from '@context/scroll_context';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface ScrollLinkProps {
   name: string;
@@ -12,7 +11,6 @@ interface ScrollLinkProps {
 const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
   const { activateScrollingDelay } = useContext(ScrollContext);
-  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   useEffect(() => {
     setAnchor(document.querySelector(`#${target}`));
@@ -33,16 +31,15 @@ const ScrollLink = ({ name, target, setIsNavShowing }: ScrollLinkProps) => {
   };
 
   return (
-    <li className={styles.linkItem}>
-      <div className={styles.underline} />
-      <a
+    <styles.LinkItem>
+      <styles.Underline />
+      <styles.Link
         href={`#${anchor}`}
-        className={`${styles.link} ${darkTheme && styles.linkDark}`}
         onClick={handleClick}
       >
         {name}
-      </a>
-    </li>
+      </styles.Link>
+    </styles.LinkItem>
   );
 };
 

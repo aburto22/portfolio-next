@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { useAppSelector } from '@hooks/use_redux';
 import Svg from '@components/svg';
 import ScrollLink from '@components/header/scroll_link';
 import DarkToggle from '@components/dark_toggle';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 const Header = () => {
   const [isNavShowing, setIsNavShowing] = useState(false);
-  const darkTheme = useAppSelector((state) => state.darkTheme);
 
-  const handleToggle = () => setIsNavShowing((val) => !val);
+  const handleToggle = () => setIsNavShowing((state) => !state);
 
   const handleHome = () => {
     window.scrollTo({
@@ -19,28 +17,24 @@ const Header = () => {
   };
 
   return (
-    <header className={`${styles.header} ${darkTheme && styles.headerDark}`}>
-      <nav className={styles.nav}>
-        <button
+    <styles.Header>
+      <styles.Nav>
+        <styles.LogoButton
           type="button"
           onClick={handleHome}
-          className={styles.logoButton}
         >
           Alejandro Aburto S.
-        </button>
-        <ul
-          className={`${styles.navLinksContainer} ${isNavShowing && styles.navLinksContainerShowing} ${darkTheme && styles.navLinksContainerDark}`}
-        >
-          <li className={styles.closeButtonItem}>
-            <button
+        </styles.LogoButton>
+        <styles.NavLinksContainer isShowing={isNavShowing}>
+          <styles.CloseButtonItem>
+            <styles.CloseButton
               type="button"
-              className={styles.closeButton}
               onClick={handleToggle}
               aria-label="close menu"
             >
-              <Svg name="close" className={styles.closeButtonSvg} />
-            </button>
-          </li>
+              <Svg name="close" />
+            </styles.CloseButton>
+          </styles.CloseButtonItem>
           <ScrollLink
             name="Projects"
             target="projects"
@@ -56,20 +50,19 @@ const Header = () => {
             target="contact"
             setIsNavShowing={setIsNavShowing}
           />
-          <li className={styles.darkToggleItem}>
+          <styles.DarkToggleItem>
             <DarkToggle />
-          </li>
-        </ul>
-        <button
+          </styles.DarkToggleItem>
+        </styles.NavLinksContainer>
+        <styles.OpenButton
           type="button"
           onClick={handleToggle}
-          className={styles.openButton}
           aria-label="open menu"
         >
-          <Svg name="menu" className={styles.openButtonSvg} />
-        </button>
-      </nav>
-    </header>
+          <Svg name="menu" />
+        </styles.OpenButton>
+      </styles.Nav>
+    </styles.Header>
   );
 };
 
