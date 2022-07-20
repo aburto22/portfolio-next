@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useAppSelector } from '../../../hooks/use_redux';
-import ScrollContext from '../../../context/scroll_context';
+import { useAppSelector } from '@hooks/use_redux';
+import ScrollContext from '@context/scroll_context';
 import styles from './styles.module.scss';
 
 interface ScrollLinkProps {

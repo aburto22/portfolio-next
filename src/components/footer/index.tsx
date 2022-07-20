@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../hooks/use_redux';
-import Svg from '../svg';
-import Form from './form';
+import { useAppSelector } from '@hooks/use_redux';
+import Svg from '@components/svg';
+import styleUtils from '@styles/utils.module.scss';
+import Form from '@components/footer/form';
 import styles from './styles.module.scss';
-import styleUtils from '../../styles/utils.module.scss';
 
 interface FooterProps {
   sidebar: boolean;

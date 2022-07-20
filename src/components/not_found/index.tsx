@@ -1,5 +1,5 @@
-import { useAppSelector } from '../../hooks/use_redux';
-import BackHomeArrow from '../back_home_arrow';
+import { useAppSelector } from '@hooks/use_redux';
+import BackHomeArrow from '@components/back_home_arrow';
 import styles from './styles.module.scss';
 
 const About = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAppSelector } from '../../../hooks/use_redux';
+import { useAppSelector } from '@hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface SideNavLinkProps {

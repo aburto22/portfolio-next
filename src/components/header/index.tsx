@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useAppSelector } from '../../hooks/use_redux';
-import Svg from '../svg';
-import ScrollLink from './scroll_link';
-import DarkToggle from '../dark_toggle';
+import { useAppSelector } from '@hooks/use_redux';
+import Svg from '@components/svg';
+import ScrollLink from '@components/header/scroll_link';
+import DarkToggle from '@components/dark_toggle';
 import styles from './styles.module.scss';
 
 const Header = () => {

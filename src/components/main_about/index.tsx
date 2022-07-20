@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/use_redux';
-import TechIcon from '../tech_icon';
-import ICONS from '../../../data/icons.json';
-import useElementOnScreen from '../../hooks/use_element_on_screen';
-import ROUTES from '../../../data/routes.json';
+import { useAppSelector } from '@hooks/use_redux';
+import TechIcon from '@components/tech_icon';
+import ICONS from '@data/icons.json';
+import useElementOnScreen from '@hooks/use_element_on_screen';
+import ROUTES from '@data/routes.json';
+import { IIcon } from '@types';
 import styles from './styles.module.scss';
-import { IIcon } from '../../types';
 
 const MainAbout = () => {
   const [refText, isShowingText] = useElementOnScreen<HTMLDivElement>();

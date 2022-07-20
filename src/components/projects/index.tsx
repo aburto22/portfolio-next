@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../../hooks/use_redux';
-import Text from '../text';
-import BackHomeArrow from '../back_home_arrow';
-import IconsFilter from './icons_filter';
-import ProjectCard from '../project_card';
+import { useAppSelector } from '@hooks/use_redux';
+import Text from '@components/text';
+import BackHomeArrow from '@components/back_home_arrow';
+import ProjectCard from '@components/project_card';
+import { IProject } from '@types';
+import IconsFilter from '@components/projects/icons_filter';
 import styles from './styles.module.scss';
-import { IProject } from '../../types';
 
 interface ProjectsProps {
   projects: IProject[];

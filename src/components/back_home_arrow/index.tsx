@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/use_redux';
-import Svg from '../svg';
-import ROUTES from '../../../data/routes.json';
+import { useAppSelector } from '@hooks/use_redux';
+import Svg from '@components/svg';
+import ROUTES from '@data/routes.json';
 import styles from './styles.module.scss';
 
 const BackHomeArrow = () => {

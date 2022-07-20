@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../hooks/use_redux';
-import useElementOnScreen from '../../hooks/use_element_on_screen';
-import ScrollButton from './scroll_button';
+import { useAppSelector } from '@hooks/use_redux';
+import useElementOnScreen from '@hooks/use_element_on_screen';
+import ScrollButton from '@components/welcome/scroll_button';
+import styleUtils from '@styles/utils.module.scss';
 import styles from './styles.module.scss';
-import styleUtils from '../../styles/utils.module.scss';
 
 const Welcome = () => {
   const darkTheme = useAppSelector((state) => state.darkTheme);

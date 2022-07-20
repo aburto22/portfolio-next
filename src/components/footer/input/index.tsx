@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { useAppSelector } from '../../../hooks/use_redux';
+import { useAppSelector } from '@hooks/use_redux';
 import styles from './styles.module.scss';
 
 interface InputProps {

@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../../hooks/use_redux';
+import { useAppSelector } from '@hooks/use_redux';
 import styles from './styles.module.scss';
 
 const Spinner = () => {

@@ -1,8 +1,8 @@
-import { useAppSelector } from '../../../hooks/use_redux';
-import SideNavLink from '../side_nav_link';
-import DarkToggle from '../../dark_toggle';
+import { useAppSelector } from '@hooks/use_redux';
+import SideNavLink from '@components/header_with_side/side_nav_link';
+import DarkToggle from '@components/dark_toggle';
+import { IAnchor } from '@types';
 import styles from './styles.module.scss';
-import { IAnchor } from '../../../types';
 
 interface SideNavProps {
   anchors: IAnchor[];

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import ScrollContext from '../../../context/scroll_context';
+import ScrollContext from '@context/scroll_context';
 
 interface ScrollButtonProps {
   target: string;

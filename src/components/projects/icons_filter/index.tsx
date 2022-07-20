@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useAppSelector } from '../../../hooks/use_redux';
-import ICONS from '../../../../data/icons.json';
+import { useAppSelector } from '@hooks/use_redux';
+import ICONS from '@data/icons.json';
 import styles from './styles.module.scss';
 
 interface IconsFilterProps {

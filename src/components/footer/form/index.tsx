@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '../../../hooks/use_redux';
-import Input from '../input';
-import TextArea from '../text_area';
-import Spinner from '../spinner';
-import sendEmail from '../../../lib/email';
+import { useAppSelector } from '@hooks/use_redux';
+import sendEmail from '@lib/email';
+import Input from '@components/footer/input';
+import TextArea from '@components/footer/text_area';
+import Spinner from '@components/footer/spinner';
 import styles from './styles.module.scss';
 
 const Form = () => {

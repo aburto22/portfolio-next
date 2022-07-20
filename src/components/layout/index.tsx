@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import Footer from '../footer';
-import { useAppSelector, useAppDispatch } from '../../hooks/use_redux';
-import { setTheme } from '../../slices/dark_theme';
+import Footer from '@components/footer';
+import { useAppSelector, useAppDispatch } from '@hooks/use_redux';
+import { setTheme } from '@slices/dark_theme';
 import styles from './styles.module.scss';
 
 interface LayoutProps {

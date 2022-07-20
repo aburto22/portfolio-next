@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useAppSelector } from '../../hooks/use_redux';
-import { IIcon } from '../../types';
+import { useAppSelector } from '@hooks/use_redux';
+import { IIcon } from '@types';
 import styles from './styles.module.scss';
 
 interface TechIconProps {

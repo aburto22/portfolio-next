@@ -1,6 +1,6 @@
-import Svg from '../svg';
-import { useAppSelector, useAppDispatch } from '../../hooks/use_redux';
-import { setTheme } from '../../slices/dark_theme';
+import Svg from '@components/svg';
+import { useAppSelector, useAppDispatch } from '@hooks/use_redux';
+import { setTheme } from '@slices/dark_theme';
 import styles from './styles.module.scss';
 
 const DarkToggle = () => {

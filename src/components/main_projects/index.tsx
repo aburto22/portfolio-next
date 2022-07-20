@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/use_redux';
-import ProjectCard from '../project_card';
-import ROUTES from '../../../data/routes.json';
-import Text from '../text';
-import useElementOnScreen from '../../hooks/use_element_on_screen';
-import { IProject } from '../../types';
+import { useAppSelector } from '@hooks/use_redux';
+import ProjectCard from '@components/project_card';
+import ROUTES from '@data/routes.json';
+import Text from '@components/text';
+import useElementOnScreen from '@hooks/use_element_on_screen';
+import { IProject } from '@types';
 import styles from './styles.module.scss';
 
 interface ProjectsProps {

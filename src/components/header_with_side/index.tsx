@@ -1,12 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useAppSelector } from '../../hooks/use_redux';
-import ROUTES from '../../../data/routes.json';
-import DarkToggle from '../dark_toggle';
-import SideNav from './side_nav';
-import Svg from '../svg';
+import { useAppSelector } from '@hooks/use_redux';
+import ROUTES from '@data/routes.json';
+import DarkToggle from '@components/dark_toggle';
+import SideNav from '@components/header_with_side/side_nav';
+import Svg from '@components/svg';
+import { IAnchor } from '@types';
 import styles from './styles.module.scss';
-import { IAnchor } from '../../types';
 
 interface HeaderSimpleProps {
   anchors?: IAnchor[]

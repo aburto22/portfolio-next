@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { useAppSelector } from '../../hooks/use_redux';
-import ICONS from '../../../data/icons.json';
-import TechIcon from '../tech_icon';
-import useElementOnScreen from '../../hooks/use_element_on_screen';
-import { IProject } from '../../types';
+import { useAppSelector } from '@hooks/use_redux';
+import ICONS from '@data/icons.json';
+import TechIcon from '@components/tech_icon';
+import useElementOnScreen from '@hooks/use_element_on_screen';
+import { IProject } from '@types';
+import styleUtils from '@styles/utils.module.scss';
 import styles from './styles.module.scss';
-import styleUtils from '../../styles/utils.module.scss';
 
 interface ProjectCardProps {
   project: IProject;
