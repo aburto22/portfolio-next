@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { fonts } from './variables';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -132,7 +133,7 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
     color: inherit;
-    font-family: $font-body;
+    font-family: ${fonts.fontBody};
     font-size: 1rem;
   }
 
