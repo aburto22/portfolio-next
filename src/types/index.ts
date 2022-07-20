@@ -1,4 +1,5 @@
-import store from '../store';
+import store from '@store';
+import * as Contentful from 'contentful';
 
 interface IImage {
   contentType?: string;
@@ -32,3 +33,15 @@ export interface IAnchor {
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+export interface TypeProjectInfoFields {
+  name: Contentful.EntryFields.Symbol;
+  description: Contentful.EntryFields.Text;
+  technologies: Contentful.EntryFields.Object;
+  liveUrl: Contentful.EntryFields.Symbol;
+  githubUrl: Contentful.EntryFields.Symbol;
+  isMainProject: Contentful.EntryFields.Boolean;
+  image: Contentful.Asset;
+}
+
+export type TypeProjectInfo = Contentful.Entry<TypeProjectInfoFields>;

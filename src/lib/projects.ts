@@ -1,6 +1,5 @@
 import { createClient } from 'contentful';
-import { TypeProjectInfoFields } from '../types/contentful';
-import { IProject } from '../types';
+import type { IProject, TypeProjectInfoFields } from '@types';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID || '',

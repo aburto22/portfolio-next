@@ -1,7 +1,7 @@
 import {
   useState, useRef, useContext, useEffect, RefObject,
 } from 'react';
-import ScrollContext from '../context/scroll_context';
+import ScrollContext from '@context/scroll_context';
 
 const useElementOnScreen = <T extends Element>(
   options = { root: null, rootMargin: '0px', threshold: 0 },
