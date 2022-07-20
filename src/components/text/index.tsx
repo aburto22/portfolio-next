@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface TextProps {
   children: React.ReactNode;
 }
 
-const Text = ({ children }: TextProps) => <p className={styles.text}>{children}</p>;
+const Text = ({ children }: TextProps) => <styles.Text>{children}</styles.Text>;
 
 export default Text;

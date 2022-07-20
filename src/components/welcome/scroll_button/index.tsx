@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ScrollContext from '@context/scroll_context';
+import * as styles from './styles';
 
 interface ScrollButtonProps {
   target: string;
-  className: string;
   children: React.ReactNode;
+  isShowing: boolean;
 }
 
-const ScrollButton = ({ target, className = '', children }: ScrollButtonProps) => {
+const WithScroll = ({ target, children, isShowing }: ScrollButtonProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
   const { activateScrollingDelay } = useContext(ScrollContext);
 
@@ -27,10 +28,10 @@ const ScrollButton = ({ target, className = '', children }: ScrollButtonProps) =
   };
 
   return (
-    <button type="button" className={className} onClick={handleClick}>
+    <styles.ButtonPrimary onClick={handleClick} isShowing={isShowing}>
       {children}
-    </button>
+    </styles.ButtonPrimary>
   );
 };
 
-export default ScrollButton;
+export default WithScroll;
