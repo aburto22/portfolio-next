@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface SubHeadingProps {
   children: React.ReactNode;
 }
 
 const SubHeading = ({ children }: SubHeadingProps) => (
-  <h2 className={styles.subHeading}>{children}</h2>
+  <styles.SubHeading>{children}</styles.SubHeading>
 );
 
 export default SubHeading;

@@ -16,26 +16,26 @@ const LinkButton = styled.a`
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.buttonFont};
   box-shadow: ${({ theme }) => theme.boxShadow.button};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.buttonFont};
+  }
 `;
 
 export const LinkButtonPrimaryBase = styled(LinkButton)`
-  color: ${({ theme }) => theme.colors.font};
   background: ${({ theme }) => theme.gradients.blue};
 
   :hover {
-    color: ${({ theme }) => theme.colors.font};
     background: ${({ theme }) => theme.gradients.blueHover}
   }
 `;
 
 export const LinkButtonSecondaryBase = styled(LinkButton)`
   background: ${({ theme }) => theme.gradients.gray};
-  color: ${({ theme }) => theme.colors.font};
 
   :hover {
-    color: ${({ theme }) => theme.colors.font};
     background: ${({ theme }) => theme.gradients.grayHover}
   }
 `;
@@ -44,12 +44,11 @@ const Button = styled.button`
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.buttonFont};
   box-shadow: ${({ theme }) => theme.boxShadow.button};
 `;
 
 export const ButtonPrimaryBase = styled(Button)`
-  @extend .button;
   background: ${({ theme }) => theme.gradients.blue};
 
   :hover {
@@ -58,7 +57,6 @@ export const ButtonPrimaryBase = styled(Button)`
 `;
 
 export const ButtonSecondaryBase = styled(Button)`
-  @extend .button;
   background: ${({ theme }) => theme.gradients.gray};
 
   :hover {
