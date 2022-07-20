@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import Footer from '@components/footer';
-import { useAppSelector, useAppDispatch } from '@hooks/use_redux';
-import { setTheme } from '@slices/dark_theme';
-import styles from './styles.module.scss';
+import DarkThemeContext from '@context/dark_theme_context';
+import * as styles from './styles';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,11 +10,10 @@ interface LayoutProps {
 }
 
 const Layout = ({ children, Header, sidebar = false }: LayoutProps) => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-  const dispatch = useAppDispatch();
+  const { toggleDarkTheme } = useContext(DarkThemeContext);
 
   useEffect(() => {
-    const getTheme = (): boolean => {
+    const doesUsePrefersDarkTheme = (): boolean => {
       const savedTheme = localStorage.getItem('theme');
 
       if (savedTheme) {
@@ -25,17 +23,19 @@ const Layout = ({ children, Header, sidebar = false }: LayoutProps) => {
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     };
 
-    dispatch(setTheme(getTheme()));
-  }, [dispatch]);
+    if (doesUsePrefersDarkTheme()) {
+      toggleDarkTheme();
+    }
+  }, [toggleDarkTheme]);
 
   return (
-    <div className={`${styles.container} ${darkTheme && styles.containerDark}`}>
+    <styles.Container>
       {Header}
       <main>
         {children}
       </main>
       <Footer sidebar={sidebar} />
-    </div>
+    </styles.Container>
   );
 };
 

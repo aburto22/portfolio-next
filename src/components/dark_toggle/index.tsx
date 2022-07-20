@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Svg from '@components/svg';
 import DarkThemeContext from '@context/dark_theme_context';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 const DarkToggle = () => {
   const { darkTheme, toggleDarkTheme } = useContext(DarkThemeContext);
@@ -11,20 +11,21 @@ const DarkToggle = () => {
   };
 
   return (
-    <button
+    <styles.Button
       type="button"
       onClick={handleDark}
-      className={styles.toggler}
       aria-label="toggle dark theme"
     >
-      <div className={`${styles.container} ${darkTheme && styles.containerDark}`}>
-        {darkTheme ? (
-          <Svg name="moon" className={styles.svg} stroke={2} />
-        ) : (
-          <Svg name="sun" className={styles.svg} stroke={2} />
-        )}
-      </div>
-    </button>
+      <styles.Container darkTheme={darkTheme}>
+        <styles.SvgIcon>
+          {darkTheme ? (
+            <Svg name="moon" stroke={2} />
+          ) : (
+            <Svg name="sun" stroke={2} />
+          )}
+        </styles.SvgIcon>
+      </styles.Container>
+    </styles.Button>
   );
 };
 
