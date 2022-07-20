@@ -1,19 +1,16 @@
-import { useAppSelector } from '@hooks/use_redux';
 import BackHomeArrow from '@components/back_home_arrow';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
-const About = () => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-
-  return (
-    <section className={`${styles.section} ${darkTheme && styles.sectionDark}`}>
-      <BackHomeArrow />
-      <article className={styles.content}>
-        <h1 className={styles.title}>404 - Not Found</h1>
-        <p className={styles.description}>The page you are trying to access doesn&apos;t exists.</p>
-      </article>
-    </section>
-  );
-};
+const About = () => (
+  <styles.Section>
+    <BackHomeArrow />
+    <styles.Content>
+      <styles.Title>404 - Not Found</styles.Title>
+      <styles.Description>
+        The page you are trying to access doesn&apos;t exists.
+      </styles.Description>
+    </styles.Content>
+  </styles.Section>
+);
 
 export default About;
