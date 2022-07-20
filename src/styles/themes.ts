@@ -3,6 +3,7 @@ import type { DefaultTheme } from 'styled-components';
 export const light: DefaultTheme = {
   colors: {
     background: 'white',
+    imageBackground: 'white',
     font: '#3a3a3a',
     lightGray: 'rgb(229, 231, 235)',
     blueLink: '#006baa',
@@ -42,6 +43,7 @@ export const light: DefaultTheme = {
 export const dark: DefaultTheme = {
   colors: {
     background: '#1a1a1a',
+    imageBackground: 'white',
     font: 'white',
     lightGray: '#3a3a3a',
     blueLink: '#5fb9ee',
