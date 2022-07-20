@@ -15,6 +15,16 @@ declare module 'styled-components' {
       blueLinkHover: string,
       green: string,
       red: string,
-    }
+    },
+    gradients: {
+      blue: string,
+      blueHover: string,
+      gray: string,
+      grayHover: string,
+    },
+    boxShadow: {
+      form: string,
+      button: string,
+    },
   }
 }

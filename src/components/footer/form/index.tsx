@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useAppSelector } from '@hooks/use_redux';
 import sendEmail from '@lib/email';
 import Input from '@components/footer/input';
 import TextArea from '@components/footer/text_area';
 import Spinner from '@components/footer/spinner';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 const Form = () => {
   const [email, setEmail] = useState('');
@@ -16,8 +15,6 @@ const Form = () => {
     code: '',
   });
   const [loading, setLoading] = useState(false);
-
-  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,31 +37,22 @@ const Form = () => {
     setIsMessageSent(true);
   };
 
-  const messageStyle = notice.code === 'error' ? styles.messageError : styles.messageCorrect;
-
   const messageValid = message.length > 10;
   const emailValid = email.length > 0 && email.includes('@') && email.includes('.');
   const nameValid = name.length > 0;
 
-  const isBtnActive = isMessageSent
-    ? false
-    : emailValid && messageValid && nameValid && !loading;
+  const displayNotice = notice.message.length > 0;
+
+  const disabled = isMessageSent || !emailValid || !messageValid || !nameValid || loading;
 
   return (
-    <div className={`focus-me ${styles.formContainer} ${darkTheme && styles.formContainerDark}`}>
-      <span id="contact" className={styles.anchor} />
-      <h2 className={styles.formTitle}>
-        Do you want to say hi?
-      </h2>
-      <p
-        className={`${styles.message} ${notice.code.length > 0 && messageStyle}`}
-      >
+    <styles.FormContainer className="focus-me">
+      <styles.Anchor id="contact" />
+      <styles.FormTitle>Do you want to say hi?</styles.FormTitle>
+      <styles.Message displayNotice={displayNotice} isSuccess={notice.code === 'success'}>
         {notice.message}
-      </p>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.form}
-      >
+      </styles.Message>
+      <styles.Form onSubmit={handleSubmit}>
         <Input
           name="name"
           text="Name"
@@ -86,15 +74,14 @@ const Form = () => {
           setField={setMessage}
           fieldValid={messageValid}
         />
-        <button
+        <styles.SubmitButton
           type="submit"
-          className={`${styles.submitButton} ${darkTheme && styles.submitButtonDark} ${!isBtnActive && styles.submitButtonInactive}`}
-          disabled={!isBtnActive}
+          disabled={disabled}
         >
           {loading ? <Spinner /> : 'Send'}
-        </button>
-      </form>
-    </div>
+        </styles.SubmitButton>
+      </styles.Form>
+    </styles.FormContainer>
   );
 };
 
