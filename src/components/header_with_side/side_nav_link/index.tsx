@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useAppSelector } from '@hooks/use_redux';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface SideNavLinkProps {
   name: string;
@@ -9,7 +8,6 @@ interface SideNavLinkProps {
 
 const SideNavLink = ({ name, target }: SideNavLinkProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
-  const darkTheme = useAppSelector((state) => state.darkTheme);
 
   useEffect(() => {
     setAnchor(document.querySelector(target));
@@ -26,15 +24,14 @@ const SideNavLink = ({ name, target }: SideNavLinkProps) => {
   };
 
   return (
-    <li className={`${styles.linkItem} ${darkTheme && styles.linkItemDark}`}>
-      <a
+    <styles.LinkItem>
+      <styles.Link
         href={target}
-        className={styles.link}
         onClick={handleClick}
       >
         {name}
-      </a>
-    </li>
+      </styles.Link>
+    </styles.LinkItem>
   );
 };
 

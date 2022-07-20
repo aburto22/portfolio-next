@@ -1,8 +1,7 @@
-import { useAppSelector } from '@hooks/use_redux';
 import SideNavLink from '@components/header_with_side/side_nav_link';
 import DarkToggle from '@components/dark_toggle';
 import { IAnchor } from '@types';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface SideNavProps {
   anchors: IAnchor[];
@@ -10,24 +9,20 @@ interface SideNavProps {
 }
 
 const SideNav = ({ anchors, isSideShowing }: SideNavProps) => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-
   const AnchorsComponent = anchors.map((anchor) => (
     <SideNavLink name={anchor.name} target={anchor.target} key={anchor.name} />
   ));
 
   return (
-    <aside
-      className={`${styles.sideMenu} ${darkTheme && styles.sideMenuDark} ${isSideShowing && styles.sideMenuShowing}`}
-    >
-      <h2 className={`${styles.title} ${darkTheme && styles.titleDark}`}>
+    <styles.SideMenu isShowing={isSideShowing}>
+      <styles.Title>
         Content
-      </h2>
+      </styles.Title>
       <ul>{AnchorsComponent}</ul>
-      <div className={styles.darkToggleContainer}>
+      <styles.DarkToggleContainer>
         <DarkToggle />
-      </div>
-    </aside>
+      </styles.DarkToggleContainer>
+    </styles.SideMenu>
   );
 };
 
