@@ -1,9 +1,10 @@
-@import '../../styles/variables.scss';
+import { dimensions } from '@styles/variables';
+import styled from 'styled-components'
 
-.mainProjectSize {
-  max-width: $width-main-project;
-  max-height: $height-main-project;
-}
+export const MainProjectSize = styled.div`
+  max-width: ${dimensions.widthMainProject};
+  max-height: ${dimensions.heightMainProject};
+`;
 
 .section {
   position: relative;
