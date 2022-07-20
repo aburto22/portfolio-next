@@ -1,7 +1,6 @@
 import Image from 'next/image';
-import { useAppSelector } from '@hooks/use_redux';
 import ICONS from '@data/icons.json';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface IconsFilterProps {
   filter: string;
@@ -10,8 +9,6 @@ interface IconsFilterProps {
 }
 
 const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-
   const handleClick = (iconName: string) => {
     if (filter === iconName) {
       setFilter('');
@@ -24,10 +21,10 @@ const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
     .filter((icon) => icons.includes(icon.icon))
     .map((icon) => (
       <li key={icon.name}>
-        <button
+        <styles.FilterButton
           type="button"
           onClick={() => handleClick(icon.icon)}
-          className={`${styles.filterButton} ${darkTheme && styles.filterButtonDark} ${filter === icon.icon && styles.filterButtonSelected}`}
+          isSelected={filter === icon.icon}
         >
           <Image
             src={`/icons/${icon.icon}.png`}
@@ -35,15 +32,15 @@ const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
             width={40}
             height={40}
           />
-          <p className={styles.iconName}>{icon.name}</p>
-        </button>
+          <p>{icon.name}</p>
+        </styles.FilterButton>
       </li>
     ));
 
   return (
-    <ul className={styles.filterList}>
+    <styles.FilterList>
       {FilterComponents}
-    </ul>
+    </styles.FilterList>
   );
 };
 
