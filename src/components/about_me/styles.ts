@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { dimensions } from '@styles/variables';
 
+export { AsidePlaceholder } from '@styles/utils';
+
 export const Section = styled.section`
   min-height: calc(100vh - ${dimensions.heightHeader} - ${dimensions.heightFooter});
   min-height: $height-full-nav-footer;

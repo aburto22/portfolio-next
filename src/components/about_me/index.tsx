@@ -3,12 +3,11 @@ import TextContainer from '@components/about_me/text_container';
 import Text from '@components/text';
 import BackHomeArrow from '@components/back_home_arrow';
 import aboutImage from '@public/images/about-me/about-me.jpg';
-import styleUtils from '@styles/utils.module.scss';
 import * as styles from './styles';
 
 const AboutMe = () => (
   <>
-    <div className={styleUtils.asidePlaceholder} />
+    <styles.AsidePlaceholder />
     <styles.Section>
       <BackHomeArrow />
       <styles.Title>

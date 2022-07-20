@@ -4,10 +4,16 @@ export const light: DefaultTheme = {
   colors: {
     background: 'white',
     imageBackground: 'white',
+    backgroundGray: '#fbfbfb',
     font: '#3a3a3a',
+    spinnerLight: 'white',
+    spinnerDark: '#3a3a3a',
     lightGray: 'rgb(229, 231, 235)',
+    mediumGray: '#b4b4b4',
     blueLink: '#006baa',
     blueLinkHover: '#4aa6f3',
+    green: 'rgb(16, 185, 129)',
+    red: 'rgb(239, 68, 68)',
 
     // lightWhite: 'white',
     // gray200: 'rgb(229, 231, 235)',
@@ -44,10 +50,16 @@ export const dark: DefaultTheme = {
   colors: {
     background: '#1a1a1a',
     imageBackground: 'white',
+    backgroundGray: '#232323',
     font: 'white',
+    spinnerLight: 'white',
+    spinnerDark: '#3a3a3a',
     lightGray: '#3a3a3a',
+    mediumGray: '#b4b4b4',
     blueLink: '#5fb9ee',
     blueLinkHover: '#4aa6f3',
+    green: 'rgb(16, 185, 129)',
+    red: 'rgb(239, 68, 68)',
 
     // lightWhite: 'white',
     // gray200: 'rgb(229, 231, 235)',

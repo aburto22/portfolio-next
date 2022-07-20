@@ -117,8 +117,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: ${({ theme }) => theme.colors.blueLink};
     text-decoration: none;
+
+    :hover {
+      color: ${({ theme }) => theme.colors.blueLinkHover};
+    }
   }
 
   * {

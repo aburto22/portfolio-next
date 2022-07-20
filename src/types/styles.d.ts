@@ -5,10 +5,16 @@ declare module 'styled-components' {
     colors: {
       background: string,
       imageBackground: string,
+      backgroundGray: string,
       font: string,
+      spinnerLight: string,
+      spinnerDark: string,
       lightGray: string,
+      mediumGray: string,
       blueLink: string,
       blueLinkHover: string,
+      green: string,
+      red: string,
     }
   }
 }

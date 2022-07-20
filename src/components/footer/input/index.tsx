@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import { useAppSelector } from '@hooks/use_redux';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
 interface InputProps {
   field: string;
@@ -14,8 +11,6 @@ interface InputProps {
 const Input = ({
   field, setField, name, text, fieldValid,
 }: InputProps) => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-
   const type = field === 'email' ? 'email' : 'text';
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -23,30 +18,21 @@ const Input = ({
     nextElementSibling?.focus();
   };
 
-  const invalidField = field.length > 0
-    ? styles.labelInvalid
-    : styles.labelInvalidContent;
+  const hasContent = field.length > 0;
 
   return (
-    <label
-      htmlFor={name}
-      className={`${styles.label} ${fieldValid ? styles.labelValid : invalidField}`}
-    >
-      <p
-        className={`${styles.labelText} ${field.length === 0 && styles.labelTextContent}`}
-        onClick={handleClick}
-      >
+    <styles.Label hasContent={hasContent} fieldValid={fieldValid} htmlFor={name}>
+      <styles.LabelText hasContent={hasContent} onClick={handleClick}>
         {text}
-      </p>
-      <input
+      </styles.LabelText>
+      <styles.Input
         type={type}
         name={name}
         value={field}
         onChange={(event) => setField(event.target.value)}
         required
-        className={`${styles.input} ${darkTheme && styles.inputDark}`}
       />
-    </label>
+    </styles.Label>
   );
 };
 

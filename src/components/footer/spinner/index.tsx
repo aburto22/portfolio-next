@@ -1,14 +1,9 @@
-import { useAppSelector } from '@hooks/use_redux';
-import styles from './styles.module.scss';
+import * as styles from './styles';
 
-const Spinner = () => {
-  const darkTheme = useAppSelector((state) => state.darkTheme);
-
-  return (
-    <div className={styles.spinnerContainer}>
-      <div className={`${styles.spinner} ${darkTheme && styles.spinnerDark}`} />
-    </div>
-  );
-};
+const Spinner = () => (
+  <styles.SpinnerContainer>
+    <styles.Spinner />
+  </styles.SpinnerContainer>
+);
 
 export default Spinner;
