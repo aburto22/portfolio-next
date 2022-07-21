@@ -4,7 +4,7 @@ const useDarkTheme = () => {
   const [darkTheme, setDarkTheme] = useState(false);
 
   useEffect(() => {
-    const doesUsePrefersDarkTheme = (): boolean => {
+    const doesUserPrefersDarkTheme = (): boolean => {
       const savedTheme = localStorage.getItem('theme');
 
       if (savedTheme) {
@@ -14,20 +14,22 @@ const useDarkTheme = () => {
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     };
 
-    if (doesUsePrefersDarkTheme()) {
+    if (doesUserPrefersDarkTheme()) {
       setDarkTheme(true);
     }
   }, [setDarkTheme]);
 
-  const toggleDarkTheme = useCallback(() => {
+  useEffect(() => {
     if (darkTheme) {
-      localStorage.setItem('theme', 'light');
-      setDarkTheme(false);
+      localStorage.setItem('theme', 'dark');
       return;
     }
-    localStorage.setItem('theme', 'dark');
-    setDarkTheme(true);
+    localStorage.setItem('theme', 'light');
   }, [darkTheme]);
+
+  const toggleDarkTheme = useCallback(() => {
+    setDarkTheme((state) => !state);
+  }, []);
 
   return { darkTheme, toggleDarkTheme };
 };
