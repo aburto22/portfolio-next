@@ -10,9 +10,7 @@ interface LayoutProps {
 const Layout = ({ children, Header, sidebar = false }: LayoutProps) => (
   <styles.Container>
     {Header}
-    <main>
-      {children}
-    </main>
+    {children}
     <Footer sidebar={sidebar} />
   </styles.Container>
 );

@@ -14,12 +14,14 @@ interface HomePageProps {
 
 const HomePage: NextPage<HomePageProps> = ({ projects }) => (
   <Layout Header={<Header />}>
-    <Head>
-      <title>Alejandro Aburto S.</title>
-    </Head>
-    <Welcome />
-    <MainProjects projects={projects} />
-    <MainAbout />
+    <main>
+      <Head>
+        <title>Alejandro Aburto S.</title>
+      </Head>
+      <Welcome />
+      <MainProjects projects={projects} />
+      <MainAbout />
+    </main>
   </Layout>
 );
 

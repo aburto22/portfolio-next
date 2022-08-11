@@ -1,17 +1,20 @@
 import { dimensions, patterns } from '@styles/variables';
 import styled from 'styled-components';
 
+export const Main = styled.main`
+  background: ${patterns.bg};
+  background-color: ${({ theme }) => theme.colors.background};
+`;
+
 export const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - ${dimensions.heightHeader} - ${dimensions.heightFooter});
-  background: ${patterns.bg};
   margin: ${dimensions.heightHeader} auto 0;
   position: relative;
   padding: 2rem 1rem 13rem;
   max-width: ${dimensions.screenLg};
-  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Title = styled.h1`
