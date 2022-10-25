@@ -1,5 +1,5 @@
 # Portfolio
-> A place where I can show you what I am up to, and tell you a bit about myself.
+> A place where I can show you what I am up to, and tell you a bit about myself. I use contenful as a CMS to manage project info, so I can quickly update my portfolio.
 >
 > This website is hosted in vercel: [_Click here to take a look._](https://portfolio-aburto22.vercel.app/)
 
@@ -25,9 +25,10 @@ Goes without saying. A place where I can showcase my work, give contact details,
 ### Front-end
 - TypeScript
 - Next.js
-- Redux
+- SWR
 - CSS Modules
 - EmailJS (to implement contact form)
+- Contentful
 
 ### Deployment and hosting
 - Vercel hosting

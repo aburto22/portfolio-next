@@ -23,24 +23,26 @@ const Projects = ({ projects }: ProjectsProps) => {
     .filter((tech, i, arr) => arr.indexOf(tech) === i);
 
   return (
-    <styles.Section>
-      <BackHomeArrow />
-      <styles.Title>All projects</styles.Title>
-      <styles.Description>
-        <styles.TextContainer>
-          <Text>
-            Here are all my projects, large and small. Feel free to check
-            them out. Use the filter option to only display projects using a
-            specific technology.
-          </Text>
-        </styles.TextContainer>
-        <styles.FilterContainer>
-          <IconsFilter filter={filter} setFilter={setFilter} usedIcons={allProjectsIcons} />
-        </styles.FilterContainer>
-      </styles.Description>
-      <styles.ProjectList>{ProjectList}</styles.ProjectList>
-      <BackHomeArrow />
-    </styles.Section>
+    <styles.Main>
+      <styles.Section>
+        <BackHomeArrow />
+        <styles.Title>All projects</styles.Title>
+        <styles.Description>
+          <styles.TextContainer>
+            <Text>
+              Here are all my projects, large and small. Feel free to check
+              them out. Use the filter option to only display projects using a
+              specific technology.
+            </Text>
+          </styles.TextContainer>
+          <styles.FilterContainer>
+            <IconsFilter filter={filter} setFilter={setFilter} usedIcons={allProjectsIcons} />
+          </styles.FilterContainer>
+        </styles.Description>
+        <styles.ProjectList>{ProjectList}</styles.ProjectList>
+        <BackHomeArrow />
+      </styles.Section>
+    </styles.Main>
   );
 };
 

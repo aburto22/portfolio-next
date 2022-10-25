@@ -84,6 +84,13 @@
     "filter": true
   },
   {
+    "name": "Styled-JSX",
+    "icon": "styled-jsx",
+    "alt": "styled jsx icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
     "name": "Tailwind CSS",
     "icon": "tailwind",
     "alt": "tailwind css icon",

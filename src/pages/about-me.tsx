@@ -7,10 +7,12 @@ import ABOUT_ANCHORS from '@data/about_anchors.json';
 
 const AboutMePage: NextPage = () => (
   <Layout Header={<HeaderWithSide anchors={ABOUT_ANCHORS} />} sidebar>
-    <Head>
-      <title>Alejandro Aburto S.</title>
-    </Head>
-    <AboutMe />
+    <main>
+      <Head>
+        <title>Alejandro Aburto S.</title>
+      </Head>
+      <AboutMe />
+    </main>
   </Layout>
 );
 
