@@ -35,6 +35,20 @@
     "filter": true
   },
   {
+    "name": "Svelte",
+    "icon": "svelte",
+    "alt": "svelte icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
+    "name": "Svelte Kit",
+    "icon": "svelte-kit",
+    "alt": "svelte-kit icon",
+    "category": "front-end",
+    "filter": true
+  },
+  {
     "name": "d3.JS",
     "icon": "d3",
     "alt": "d3 icon",
@@ -119,6 +133,13 @@
     "filter": true
   },
   {
+    "name": "Prisma",
+    "icon": "prisma",
+    "alt": "prisma icon",
+    "category": "back-end",
+    "filter": true
+  },
+  {
     "name": "Passport.JS",
     "icon": "passport",
     "alt": "passport icon",
@@ -176,7 +197,7 @@
   },
   {
     "name": "Git Hub",
-    "icon": "git_hub",
+    "icon": "git-hub",
     "alt": "git hub icon",
     "category": "general",
     "filter": false
