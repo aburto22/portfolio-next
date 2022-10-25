@@ -35,7 +35,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           </Text>
         </styles.TextContainer>
         <styles.FilterContainer>
-          <IconsFilter filter={filter} setFilter={setFilter} icons={allProjectsIcons} />
+          <IconsFilter filter={filter} setFilter={setFilter} usedIcons={allProjectsIcons} />
         </styles.FilterContainer>
       </styles.Description>
       <styles.ProjectList>{ProjectList}</styles.ProjectList>

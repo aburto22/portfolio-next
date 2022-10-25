@@ -1,13 +1,10 @@
-import { createClient } from 'contentful';
 import type { IProject, TypeProjectInfoFields } from '@types';
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-});
+import client from './contentful';
 
 export const getProjects = async (): Promise<IProject[]> => {
-  const entries = await client.getEntries<TypeProjectInfoFields>();
+  const entries = await client.getEntries<TypeProjectInfoFields>({
+    content_type: 'projectInfo',
+  });
 
   const projects = entries.items.map((item) => item.fields);
 

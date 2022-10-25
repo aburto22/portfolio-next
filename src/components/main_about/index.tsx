@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import TechIcon from '@components/tech_icon';
-import ICONS from '@data/icons.json';
 import useElementOnScreen from '@hooks/use_element_on_screen';
 import ROUTES from '@data/routes.json';
-import { IIcon } from '@types';
+import type { IIcon } from '@types';
+import { useIconsContext } from '@context/icons_context';
 import * as styles from './styles';
 
 const MainAbout = () => {
@@ -11,6 +11,7 @@ const MainAbout = () => {
   const [refFront, isShowingFront] = useElementOnScreen<HTMLUListElement>();
   const [refBack, isShowingBack] = useElementOnScreen<HTMLUListElement>();
   const [refGeneral, isShowingGeneral] = useElementOnScreen<HTMLUListElement>();
+  const icons = useIconsContext();
 
   const createIcon = (icon: IIcon, i: number) => {
     const transitionDelay = `${i * 100}ms`;
@@ -35,15 +36,15 @@ const MainAbout = () => {
     );
   };
 
-  const IconsFrontEndComponents = ICONS.filter(
+  const IconsFrontEndComponents = icons.filter(
     (icon) => icon.category === 'front-end',
   ).map(createIcon);
 
-  const IconsBackEndComponents = ICONS.filter(
+  const IconsBackEndComponents = icons.filter(
     (icon) => icon.category === 'back-end',
   ).map(createIcon);
 
-  const IconsGeneralComponents = ICONS.filter(
+  const IconsGeneralComponents = icons.filter(
     (icon) => icon.category === 'general',
   ).map(createIcon);
 

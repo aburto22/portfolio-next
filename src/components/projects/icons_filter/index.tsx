@@ -1,14 +1,15 @@
+import { useIconsContext } from '@context/icons_context';
 import Image from 'next/image';
-import ICONS from '@data/icons.json';
 import * as styles from './styles';
 
 interface IconsFilterProps {
   filter: string;
   setFilter: React.Dispatch<React.SetStateAction<string>>;
-  icons: string[];
+  usedIcons: string[];
 }
 
-const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
+const IconsFilter = ({ filter, setFilter, usedIcons }: IconsFilterProps) => {
+  const icons = useIconsContext();
   const handleClick = (iconName: string) => {
     if (filter === iconName) {
       setFilter('');
@@ -17,17 +18,17 @@ const IconsFilter = ({ filter, setFilter, icons }: IconsFilterProps) => {
     }
   };
 
-  const FilterComponents = ICONS
-    .filter((icon) => icons.includes(icon.icon))
+  const FilterComponents = icons
+    .filter((icon) => usedIcons.includes(icon.iconName))
     .map((icon) => (
       <li key={icon.name}>
         <styles.FilterButton
           type="button"
-          onClick={() => handleClick(icon.icon)}
-          isSelected={filter === icon.icon}
+          onClick={() => handleClick(icon.iconName)}
+          isSelected={filter === icon.iconName}
         >
           <Image
-            src={`/icons/${icon.icon}.png`}
+            src={icon.icon.src}
             alt={icon.alt}
             width={40}
             height={40}

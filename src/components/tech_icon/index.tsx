@@ -15,10 +15,10 @@ const TechIcon = ({ icon, tooltip = false }: TechIconProps) => (
       </styles.Tooltip>
     )}
     <Image
-      src={`/icons/${icon.icon}.png`}
+      src={icon.icon.src}
       alt={icon.alt}
-      height={72}
-      width={72}
+      height={icon.icon.height || 72}
+      width={icon.icon.width || 72}
     />
   </styles.TechIcon>
 );

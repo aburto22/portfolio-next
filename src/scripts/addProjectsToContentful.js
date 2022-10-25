@@ -34,8 +34,6 @@ const addProjects = async () => {
           },
         }
       });
-    
-      console.log(entry);
     }
   } catch (err) {
     console.error(err);

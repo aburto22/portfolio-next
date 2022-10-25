@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import ICONS from '@data/icons.json';
 import TechIcon from '@components/tech_icon';
 import useElementOnScreen from '@hooks/use_element_on_screen';
 import { IProject } from '@types';
+import { useIconsContext } from '@context/icons_context';
 import * as styles from './styles';
 
 interface ProjectCardProps {
@@ -11,16 +11,19 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, isMain = false }: ProjectCardProps) => {
+  const icons = useIconsContext();
   const {
     name, image, description, technologies, liveUrl, githubUrl,
   } = project;
   const [ref, isShowing] = useElementOnScreen<HTMLLIElement>();
 
-  const IconComponents = ICONS.filter((icon) => technologies.includes(icon.icon)).map((icon) => (
-    <styles.IconItem key={icon.name}>
-      <TechIcon icon={icon} tooltip />
-    </styles.IconItem>
-  ));
+  const IconComponents = icons
+    .filter((icon) => technologies.includes(icon.iconName))
+    .map((icon) => (
+      <styles.IconItem key={icon.name}>
+        <TechIcon icon={icon} tooltip />
+      </styles.IconItem>
+    ));
 
   return (
     <styles.ProjectCard

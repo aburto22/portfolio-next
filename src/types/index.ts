@@ -7,6 +7,10 @@ interface IImage {
   src: string;
   name?: string;
 }
+export interface IAnchor {
+  name: string;
+  target: string;
+}
 
 export interface IProject {
   name: string;
@@ -16,18 +20,6 @@ export interface IProject {
   liveUrl: string;
   githubUrl: string;
   isMainProject: boolean;
-}
-
-export interface IIcon {
-  name: string;
-  icon: string;
-  alt: string;
-  category: string;
-}
-
-export interface IAnchor {
-  name: string;
-  target: string;
 }
 
 export interface TypeProjectInfoFields {
@@ -40,4 +32,18 @@ export interface TypeProjectInfoFields {
   image: Contentful.Asset;
 }
 
-export type TypeProjectInfo = Contentful.Entry<TypeProjectInfoFields>;
+export interface IIcon {
+  name: string;
+  iconName: string;
+  alt: string;
+  category: string;
+  icon: IImage;
+}
+
+export interface TypeIconInfoFields {
+  name: Contentful.EntryFields.Symbol;
+  icon: Contentful.Asset;
+  iconName: Contentful.EntryFields.Symbol;
+  alt: Contentful.EntryFields.Symbol;
+  category: Contentful.EntryFields.Symbol;
+}
