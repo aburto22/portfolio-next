@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import ScrollContext from '@context/scroll_context';
+import React, { useState, useEffect } from 'react';
+import { useScrollContext } from '@context/scroll_context';
 import * as styles from './styles';
 
 interface ScrollButtonProps {
@@ -10,7 +10,7 @@ interface ScrollButtonProps {
 
 const WithScroll = ({ target, children, isShowing }: ScrollButtonProps) => {
   const [anchor, setAnchor] = useState<Element | null>(null);
-  const { activateScrollingDelay } = useContext(ScrollContext);
+  const { activateScrollingDelay } = useScrollContext();
 
   useEffect(() => {
     setAnchor(document.querySelector(`#${target}`));

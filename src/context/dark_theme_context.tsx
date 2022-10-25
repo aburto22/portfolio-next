@@ -13,6 +13,7 @@ const DarkThemeContext = createContext(initialValue);
 
 const DarkThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [darkTheme, setDarkTheme] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const theme = darkTheme ? dark : light;
 
@@ -30,7 +31,9 @@ const DarkThemeContextProvider = ({ children }: { children: React.ReactNode }) =
     if (doesUserPrefersDarkTheme()) {
       setDarkTheme(true);
     }
-  }, [setDarkTheme]);
+
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (darkTheme) {
@@ -48,6 +51,10 @@ const DarkThemeContextProvider = ({ children }: { children: React.ReactNode }) =
     darkTheme,
     toggleDarkTheme,
   }), [darkTheme, toggleDarkTheme]);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <DarkThemeContext.Provider value={value}>

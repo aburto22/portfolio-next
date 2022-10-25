@@ -5,9 +5,6 @@ const initialValue: IIcon[] = [];
 
 const IconsContext = createContext(initialValue);
 
-export const useIconsContext = () => {
-  const icons = useContext(IconsContext);
-  return icons;
-};
+export const useIconsContext = () => useContext(IconsContext);
 
 export default IconsContext;
