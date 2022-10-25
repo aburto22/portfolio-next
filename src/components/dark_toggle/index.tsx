@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import Svg from '@components/svg';
-import DarkThemeContext from '@context/dark_theme_context';
+import { useDarkThemeContext } from '@context/dark_theme_context';
 import * as styles from './styles';
 
 const DarkToggle = () => {
-  const { darkTheme, toggleDarkTheme } = useContext(DarkThemeContext);
+  const { darkTheme, toggleDarkTheme } = useDarkThemeContext();
 
   const handleDark = () => {
     toggleDarkTheme();
