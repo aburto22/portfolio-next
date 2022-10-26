@@ -42,9 +42,7 @@ My portfolio consists of a main page showing my main projects, technologies I wo
 
 
 ## Screenshots
-<img src="./screenshots/mobile.png" width="100">
-<img src="./screenshots/tablet.png" width="200">
-<img src="./screenshots/laptop.png" width="600">
+<img src="./screenshots/mobile.png" width="100"> <img src="./screenshots/tablet.png" width="200"> <img src="./screenshots/laptop.png" width="600">
 
 
 ## Setup
