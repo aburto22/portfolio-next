@@ -64,10 +64,9 @@ A portfolio is always ongoing. There are always things to improve and new projec
 Known bugs:
 - In very rare cases, a project tile won't return to its normal status (showing project screenshot) after stop hovering.
 
-Future features:
-- Convert to JAM stack using Contentful.
-
 
 ## Authors
-My portfolio created by myself:
-- Alejandro Aburto Salazar - [GitHub](https://github.com/aburto22)
+
+| [![Alejandro Aburto Salazar](https://avatars.githubusercontent.com/u/75444835?v=4&s=144)](https://github.com/aburto22) |
+| ---------------------------------------------------------------------------------------------------------------------- |
+| [Alejandro Aburto Salazar](https://github.com/aburto22)                                                                |
