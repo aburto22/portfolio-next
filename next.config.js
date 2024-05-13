@@ -5,8 +5,15 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['images.ctfassets.net'],
-  }
-}
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        port: "",
+        pathname: "/rukbutl5ovyq/**",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
